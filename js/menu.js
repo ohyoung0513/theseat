@@ -1,7 +1,7 @@
 function openMenu() {
     // document.addEventListener('DOMContentLoaded', function() {});
     const burgerButton = document.getElementById('open-menu-button');
-    const menuPage = document.querySelector('section');
+    const menuPage = document.querySelector('#menu section');
 
     burgerButton.addEventListener('click', function () {
         menuPage.style.visibility = 'visible';
@@ -13,7 +13,7 @@ function openMenu() {
 
 function closeMenu() {
     const closeMenuButton = document.getElementById('close-menu-button');
-    const menuPage = document.querySelector('section');
+    const menuPage = document.querySelector('#menu section');
 
     closeMenuButton.addEventListener('click', function () {
         menuPage.style.visibility = 'hidden';
@@ -55,4 +55,3 @@ function toggleAudio() {
         audioToggle.src = 'image/home/sound_icon_2.png'; // 切換圖示為關閉的喇叭
     }
 }
-window.onload = toggleAudio;

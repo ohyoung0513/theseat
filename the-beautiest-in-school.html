@@ -69,170 +69,287 @@
     ::-webkit-scrollbar-thumb:hover {
       background-color: #000000;
     }
+
+    /*menu*/
+    #menu section .menu-bg {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/menu-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
   </style>
 </head>
 
 <body>
-  <div id="rotate">
-    <!-- Modal -->
-    <div class="modal fade" id="result" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="font-family: sans-serif;">試玩版體驗結束</h5>
-          </div>
-          <div class="modal-body">
-            <h5 style="letter-spacing: 2px;">感謝您的遊玩</h5>
-            <h6 style="letter-spacing: 2px;">若有任何心得想分享，歡迎至「我有話要說」留言！</h6>
-            <div>
-              <img class="pic" src="image/thankyou.png">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="index.html"><button type="button" class="btn btn-primary modalbutton">回到首頁</button></a>
-            <a href="message-page.html"><button type="button" class="btn btn-primary modalbutton">確認</button></a>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="comic-bg"></div>
-    <div class="front-story container">
-      <div class="content col-12">
-        <img src="image/flower/flower-front.jpg" class="w-100">
-      </div>
-    </div>
-    <div class="noise-effect" style="position: relative; overflow: hidden;">
-      <div class="noise-bg">
-        <svg id="noiseSvg" width="100%" xmlns='http://www.w3.org/2000/svg' preserveAspectRatio="xMidYMid meet">
-          <filter id='noiseFilter'>
-            <feTurbulence id="turbulence" type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch' />
-            <feDisplacementMap in="SourceGraphic" scale="60" />
-          </filter>
-        </svg>
-      </div>
-      <div class="absolute-wrapper position-absolute top-0 start-50 translate-middle-x">
-        <div class="container" style="width: 80vw;">
-          <div class="press2 col-12">
-            <img src="image/flower/press2.png" id="js-forSvgHeight" class="w-100">
+  <!-- Modal -->
+  <div class="modal fade" id="result" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="font-family: sans-serif;">試玩版體驗結束</h5>
+        </div>
+        <div class="modal-body">
+          <h5 style="letter-spacing: 2px;">感謝您的遊玩</h5>
+          <h6 style="letter-spacing: 2px;">若有任何心得想分享，歡迎至「我有話要說」留言！</h6>
+          <div>
+            <img class="pic" src="image/thankyou.png">
           </div>
         </div>
-      </div>
-    </div>
-    <div class="write-hw container">
-      <div class="content col-12">
-        <img src="image/flower/flower-write-hw-up.jpg" class="w-100">
-        <div class="circle-scale-effect">
-          <img src="image/flower/flower-write-hw-down.png" class="w-100">
-          <svg viewBox="0 0 1920 1080" fill="none" preserveAspectRatio="xMidYMin slice">
-            <defs>
-              <mask id="circleMask">
-                <circle cx="450" cy="250" r="180" fill="white" class="circle" />
-              </mask>
-            </defs>
-            <rect width="1920" height="1080" fill="#000000" width="100%" height="100%" mask="url(#circleMask)" />
-          </svg>
+        <div class="modal-footer">
+          <a href="index.html"><button type="button" class="btn btn-primary modalbutton">回到首頁</button></a>
+          <a href="message-page.html"><button type="button" class="btn btn-primary modalbutton">確認</button></a>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
       </div>
-    </div>
-    <div class="memory container" style="padding: 0;">
-      <div class="content col-12">
-        <img src="image/flower/flower-memory.jpg" class="w-100">
-      </div>
-    </div>
-    <div class="parallax-effect" id="parallax-effect-trigger">
-      <div class="bg-break">
-        <div class="container">
-          <div class="row">
-            <div class="col-4 ms-auto pic-phone" data-speed="0">
-              <img src="image/flower/phone.png" class="w-100">
-            </div>
-            <div class="col-10 ms-auto pic-rank" data-speed="0.2">
-              <img src="image/flower/rank.png" class="w-100">
-            </div>
-            <div class="col-12 ms-5 pic-face" data-speed="0.5">
-              <img src="image/flower/face.png" class="w-50">
-            </div>
-          </div>
-        </div>
-        <div class="container take-care">
-          <div class="row">
-            <div class="pic-take-care" class="col-12" data-speed="0.8" style="margin-top: 5%;">
-              <img src="image/flower/take-care.png" class="w-50">
-            </div>
-          </div>
-        </div>
-        <div class="container question-and-react">
-          <div class="row">
-            <div class="pic-left-face col-3 align-self-center" data-speed="0.2">
-              <img src="image/flower/scared.png" class="w-100">
-            </div>
-            <div class="pic-talking col-4 align-self-center" data-speed="0.6">
-              <img src="image/flower/speak1.png" class="w-100">
-            </div>
-            <div class="pic-right-face col-5 align-self-end" data-speed="1">
-              <img src="image/flower/sad.png" class="w-100">
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-4 pic-agree offset-md-2 offset-sm-2" data-speed="0.2" style="margin-top: 5%;">
-              <img src="image/flower/agree.png" class="w-100">
-            </div>
-            <div class="col-5 pic-shocked-up offset-md-1 offset-sm-1" data-speed="-0.1">
-              <img src="image/flower/shocked-up.png" class="w-100">
-            </div>
-            <div class="col-5 pic-hand" data-speed="-0.2">
-              <img src="image/flower/hand.png" class="w-100">
-            </div>
-            <div class="col-6 pic-shocked-down" data-speed="-0.5">
-              <img src="image/flower/shocked-down.png" class="w-100">
-            </div>
-          </div>
-        </div>
-        <div class="did-not-vote" data-speed="-0.2">
-          <img src="image/flower/did-not-vote.png" class="w-100">
-        </div>
-      </div>
-    </div>
-
-    <div class="back-story container">
-      <div class="content col-12">
-        <img src="image/flower/flower-back.jpg" class="w-100">
-      </div>
-    </div>
-    <div class="pop-effect container" style="margin-top: -10%;">
-      <div class="row">
-        <div class="col-7">
-          <img src="image/flower/flower-back-row1.png" class="w-100">
-        </div>
-        <div class="col-7 offset-md-1">
-          <img src="image/flower/flower-back-row2.png" class="w-100">
-        </div>
-        <div class="row justify-content-end" style="margin-top: -25%;">
-          <div class="col-10">
-            <img src="image/flower/flower-back-row3.png" class="w-100">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <iframe id="addFrame" src="add_beauty.html"
-      style="width: 100%; height: 1500px; border: none;"></iframe>
-    <div class="go-next-web" style="display: flex; justify-content: center; margin-bottom: 5%;">
-      <a href="#" data-bs-toggle="modal" data-bs-target="#result"><button>試玩結束To be continued</button></a>
     </div>
   </div>
+
+  <audio id="audio" src="bgm/maou_bgm_piano29.mp3" loop autoplay></audio>
+  <header>
+    <div class="all-icon-container">
+      <div class="burger icon" id="open-menu-button">
+        <div class="icon-size">
+          <img src="image/home/buger_icon.png" class="w-100">
+        </div>
+      </div>
+      <div class="sound icon">
+        <div class="icon-size">
+          <img id="audioToggle" src="image/home/sound_icon_2.png" class="w-100">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="comic-bg"></div>
+  <div class="front-story container">
+    <div class="content col-12">
+      <img src="image/flower/flower-front.jpg" class="w-100">
+    </div>
+  </div>
+  <div class="noise-effect" style="position: relative; overflow: hidden;">
+    <div class="noise-bg">
+      <svg id="noiseSvg" width="100%" xmlns='http://www.w3.org/2000/svg' preserveAspectRatio="xMidYMid meet">
+        <filter id='noiseFilter'>
+          <feTurbulence id="turbulence" type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch' />
+          <feDisplacementMap in="SourceGraphic" scale="60" />
+        </filter>
+      </svg>
+    </div>
+    <div class="absolute-wrapper position-absolute top-0 start-50 translate-middle-x">
+      <div class="container" style="width: 80vw;">
+        <div class="press2 col-12">
+          <img src="image/flower/press2.png" id="js-forSvgHeight" class="w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="write-hw container">
+    <div class="content col-12">
+      <img src="image/flower/flower-write-hw-up.jpg" class="w-100">
+      <div class="circle-scale-effect">
+        <img src="image/flower/flower-write-hw-down.png" class="w-100">
+        <svg viewBox="0 0 1920 1080" fill="none" preserveAspectRatio="xMidYMin slice">
+          <defs>
+            <mask id="circleMask">
+              <circle cx="450" cy="250" r="180" fill="white" class="circle" />
+            </mask>
+          </defs>
+          <rect width="1920" height="1080" fill="#000000" width="100%" height="100%" mask="url(#circleMask)" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="memory container" style="padding: 0;">
+    <div class="content col-12">
+      <img src="image/flower/flower-memory.jpg" class="w-100">
+    </div>
+  </div>
+  <div class="parallax-effect" id="parallax-effect-trigger">
+    <div class="bg-break">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 ms-auto pic-phone" data-speed="0">
+            <img src="image/flower/phone.png" class="w-100">
+          </div>
+          <div class="col-10 ms-auto pic-rank" data-speed="0.2">
+            <img src="image/flower/rank.png" class="w-100">
+          </div>
+          <div class="col-12 ms-5 pic-face" data-speed="0.5">
+            <img src="image/flower/face.png" class="w-50">
+          </div>
+        </div>
+      </div>
+      <div class="container take-care">
+        <div class="row">
+          <div class="pic-take-care" class="col-12" data-speed="0.8" style="margin-top: 5%;">
+            <img src="image/flower/take-care.png" class="w-50">
+          </div>
+        </div>
+      </div>
+      <div class="container question-and-react">
+        <div class="row">
+          <div class="pic-left-face col-3 align-self-center" data-speed="0.2">
+            <img src="image/flower/scared.png" class="w-100">
+          </div>
+          <div class="pic-talking col-4 align-self-center" data-speed="0.6">
+            <img src="image/flower/speak1.png" class="w-100">
+          </div>
+          <div class="pic-right-face col-5 align-self-end" data-speed="1">
+            <img src="image/flower/sad.png" class="w-100">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 pic-agree offset-md-2 offset-sm-2" data-speed="0.2" style="margin-top: 5%;">
+            <img src="image/flower/agree.png" class="w-100">
+          </div>
+          <div class="col-5 pic-shocked-up offset-md-1 offset-sm-1" data-speed="-0.1">
+            <img src="image/flower/shocked-up.png" class="w-100">
+          </div>
+          <div class="col-5 pic-hand" data-speed="-0.2">
+            <img src="image/flower/hand.png" class="w-100">
+          </div>
+          <div class="col-6 pic-shocked-down" data-speed="-0.5">
+            <img src="image/flower/shocked-down.png" class="w-100">
+          </div>
+        </div>
+      </div>
+      <div class="did-not-vote" data-speed="-0.2">
+        <img src="image/flower/did-not-vote.png" class="w-100">
+      </div>
+    </div>
+  </div>
+
+  <div class="back-story container">
+    <div class="content col-12">
+      <img src="image/flower/flower-back.jpg" class="w-100">
+    </div>
+  </div>
+  <div class="pop-effect container" style="margin-top: -10%;">
+    <div class="row">
+      <div class="col-7">
+        <img src="image/flower/flower-back-row1.png" class="w-100">
+      </div>
+      <div class="col-7 offset-md-1">
+        <img src="image/flower/flower-back-row2.png" class="w-100">
+      </div>
+      <div class="row justify-content-end" style="margin-top: -25%;">
+        <div class="col-10">
+          <img src="image/flower/flower-back-row3.png" class="w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <iframe id="addFrame" src="add_beauty.html" style="width: 100%; height: 1500px; border: none;"></iframe>
+  <div class="go-next-web" style="display: flex; justify-content: center; margin-bottom: 5%;">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#result"><button>試玩結束To be continued</button></a>
+  </div>
+
+  <div id="menu">
+    <section>
+      <div class="menu-bg"></div>
+      <div class="all-icon-container">
+        <div class="close icon" id="close-menu-button">
+          <div class="icon-size">
+            <img src="image/all-need-to-use/burger-close-icon.png" class="w-100">
+          </div>
+        </div>
+      </div>
+      <div class="container d-flex">
+        <div class="col-12">
+          <div class="content-container d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="line-content-box">
+              <div class="note-layout" style="width: 100%;">
+                <div class="note-date-image d-flex justify-content-end">
+                  <img src="image/all-need-to-use/note-date.png" style="width: 10vw; padding-right: 20px;">
+                </div>
+              </div>
+              <ul style="padding: 0 1.8vw;">
+                <li>
+                  <span class="menu-topic-text">目錄<span class="small-size-text">MENU</span></span>
+                </li>
+                <li>
+                  <a href="chapter-list-page.html">
+                    <div class="menu-option">
+                      劇情章節.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="message-page.html">
+                    <div class="menu-option">
+                      我有話要說.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="menu-option">
+                      延伸閱讀.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="menu-option">
+                      引用資料.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="menu-option">
+                      關於我們.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div class="border"></div>
+                </li>
+                <li>
+                  <div class="border"></div>
+                </li>
+              </ul>
+              <div class="pen-layout position-absolute" style="bottom: -50px; right: -100px; width: 25vw;">
+                <div class="pen-image">
+                  <img src="image/all-need-to-use/menu-pen.png" style="width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
 
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="./mobile-version/mobile-rotate.js"></script>
   <script src="./mobile-version/mobile-interact.js"></script>
+  <script src="js/menu.js"></script>
 
   <script>
+    openMenu();
+    closeMenu();
+    // 點擊音效開關按鈕時切換音效狀態
+    document.getElementById('audioToggle').addEventListener('click', toggleAudio);
+
+
     gsap.registerPlugin(ScrollTrigger);
 
     //噪點背景
