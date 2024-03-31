@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校花</title>
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .comic-bg{
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/content-comic-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
+
+    .bg-break{
+      background-image: url(image/flower/bg-break.png);
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      width: 100%;
+    }
+
+    .noise-effect{
+      background-image: url(image/flower/noise-background.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+
+    .write-hw svg{
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      left: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="rotate">
+    <div class="comic-bg"></div>
+    <div class="front-story container">
+      <div class="content col-12">
+        <img src="image/flower/flower-front.jpg" class="w-100">
+      </div>
+    </div>
+    <div class="noise-effect">
+      <div class="container">
+        <div class="press2 col-12">
+          <img src="image/flower/press2.png" class="w-100">
+        </div>
+      </div>
+    </div>
+    <div class="write-hw container">
+      <div class="content col-12">
+        <img src="image/flower/flower-write-hw-up.jpg" class="w-100">
+        <div class="circle-scale-effect">
+          <img src="image/flower/flower-write-hw-down.png" class="w-100">
+          <svg viewBox="0 0 1920 1080" fill="none" preserveAspectRatio="xMidYMin slice">
+            <defs>
+              <mask id="circleMask">
+                <circle cx="450" cy="250" r="180" fill="white" class="circle"/>
+              </mask>
+            </defs>
+            <rect width="1920" height="1080" fill="#000000" width="100%" height="100%" mask="url(#circleMask)"/>
+          </svg>  
+        </div>
+      </div>
+    </div>
+    <div class="memory container" style="padding: 0;">
+      <div class="content col-12">
+        <img src="image/flower/flower-memory.jpg" class="w-100">
+      </div>
+    </div>
+    <div class="parallax-effect" id="parallax-effect-trigger">
+      <div class="bg-break">
+        <div class="container">
+          <div class="row">
+            <div class="col-5 ms-auto pic-phone" data-speed="0">
+              <img src="image/flower/phone.png" class="w-100">
+            </div>
+            <div class="col-12 ms-5 pic-face" data-speed="0.5">
+              <img src="image/flower/face.png" class="w-50">
+            </div>
+          </div>
+        </div>
+        <div class="container take-care">
+          <div class="row">
+            <div class="pic-take-care" class="col-12" data-speed="0.8" style="margin-top: 5%;">
+              <img src="image/flower/take-care.png" class="w-50">
+            </div>
+          </div>
+        </div>
+        <div class="container question-and-react">
+          <div class="row">
+            <div class="pic-left-face col-3 align-self-center" data-speed="0.2">
+              <img src="image/flower/scared.png" class="w-100">
+            </div>
+            <div class="pic-talking col-4 align-self-center" data-speed="0.6">
+              <img src="image/flower/speak1.png" class="w-100">
+            </div>
+            <div class="pic-right-face col-5 align-self-end" data-speed="1">
+              <img src="image/flower/sad.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-4 pic-agree offset-md-2 offset-sm-2" data-speed="0.2" style="margin-top: 5%;">
+              <img src="image/flower/agree.png" class="w-100">
+            </div>
+            <div class="col-5 pic-shocked-up offset-md-1 offset-sm-1" data-speed="-0.1">
+              <img src="image/flower/shocked-up.png" class="w-100">
+            </div>
+            <div class="col-5 pic-hand" data-speed="-0.2">
+              <img src="image/flower/hand.png" class="w-100">
+            </div>
+            <div class="col-6 pic-shocked-down" data-speed="-0.5">
+              <img src="image/flower/shocked-down.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="did-not-vote" data-speed="-0.2">
+          <img src="image/flower/did-not-vote.png" class="w-100">
+        </div>
+      </div>
+    </div>
+
+    <div class="back-story container">
+      <div class="content col-12">
+        <img src="image/flower/flower-back.jpg" class="w-100">
+      </div>
+    </div>
+    <div class="pop-effect container" style="margin-top: -10%;">
+      <div class="row">
+        <div class="col-7">
+          <img src="image/flower/flower-back-row1.jpg" class="w-100">
+        </div>
+        <div class="col-7 offset-md-1">
+          <img src="image/flower/flower-back-row2.png" class="w-100">
+        </div>
+        <div class="row justify-content-end" style="margin-top: -25%;">
+          <div class="col-10">
+            <img src="image/flower/flower-back-row3.png" class="w-100">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="to-be-continued" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
+      <button style="height: 5vh; width: 15vw; border: 2px solid black; background-color: #C3DD45; cursor: pointer;">試玩結束To be continued</button>
+    </div>
+  </div>
+  
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./mobile-version/mobile-rotate.js"></script>
+  <script src="./mobile-version/mobile-interact.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    //思敏圓圈放大
+    function circleScale(){
+      const circleTrigger = document.querySelector(".circle-scale-effect");
+
+      let circleAnima = gsap.timeline({
+        scrollTrigger: {
+          trigger: circleTrigger,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+          // markers: true,
+          // toggleActions: 'play none none reverse'
+        }
+      });
+
+      circleAnima.to('.circle', {
+        attr: {r: 1800},
+      });
+    }
+
+    //parallax-scroll
+    function parallaxScroll(){
+      let postsSection = document.querySelector('#parallax-effect-trigger');
+      gsap.to("[data-speed]", {
+        y: (i, el) => (-1 * parseFloat(el.getAttribute("data-speed"))) * (postsSection.offsetHeight / 3),
+        ease: "none",
+        scrollTrigger: {
+          trigger:postsSection,
+          invalidateOnRefresh: true,
+          scrub: 0.1,
+          // markers: true,
+          start: 'top bottom'
+        }
+      });
+    }
+    
+    //pop-effext
+    function popEffect(){
+      let isAnimating = false;
+
+      const trigger = ScrollTrigger.create({
+        trigger: ".pop-effect",
+        start: "top top",
+        end: "bottom top",
+        onUpdate: (self) => {
+          if (!isAnimating) {
+            isAnimating = true;
+
+            gsap.to(".pop-effect", {
+              scale: 1.05,
+              duration: 0.5,
+              ease: "circ.out",
+              // markers: true,
+              onComplete: () => {
+                gsap.to(".pop-effect", {
+                  scale: 1,
+                  duration: 0.5,
+                  ease: "circ.out",
+                  // markers: true,
+                  onComplete: () => {
+                    isAnimating = false;
+                  },
+                });
+              },
+            });
+          }
+        },
+      });
+
+      // 滾動事件監聽
+      window.addEventListener("wheel", () => {
+        // 滾動時，更新 ScrollTrigger
+        trigger.update();
+      });
+    }
+
+    circleScale();
+    parallaxScroll();
+    popEffect();
+    
+  </script>
+
+
+
+</body>
+</html>

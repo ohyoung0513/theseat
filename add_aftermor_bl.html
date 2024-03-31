@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: transparent;
+        }
+
+        .add-box {
+            border: 2px #adadad solid;
+            border-radius: 0.5rem;
+            padding: 3rem;
+        }
+
+        .add {
+            font-family: 'Noto Serif TC', serif;
+            text-align: center;
+            letter-spacing: 0.2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-btn {
+            font-family: 'Noto Serif TC', serif;
+            font-size: large;
+            letter-spacing: 0.2rem;
+            height: 50px;
+            background: #313131;
+            color: white;
+            font-weight: bold;
+            margin: 0px 10px 0px 10px;
+            border-radius: 10px 10px 0 0;
+            border: transparent;
+        }
+
+        .add-btn:hover {
+            background-color: #6c6c6c;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .add-btn:focus {
+            background-color: #C3DD45;
+            color: #313131;
+            transition: 0.3s;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .content h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            line-height: 2.5rem;
+        }
+
+        p {
+            font-size: medium;
+            line-height: 2.5rem;
+            margin-top: 2vh;
+            letter-spacing: 0.1rem;
+        }
+
+        h5 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text d-flex flex-column justify-content-center align-items-center" style="margin-top: 10vh;">
+            <div class="box add">
+                <h1 style="font-weight: bold;">如果遇到類似的情形的話...？</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="display: flex; justify-content: center; margin-top: 5vh;">
+            <h5 class="col-2" style="justify-content: flex-end;">給</h1>
+                <button autofocus class="col-2 add-btn" onclick="makeChoice3(1)">學生</button>
+                <button class="col-2 add-btn" onclick="makeChoice3(2)">教師</button>
+                <button class="col-2 add-btn" onclick="makeChoice3(3)">家長</button>
+                <h5 class="col-2">的小補充！</h1>
+        </div>
+        <div class="row">
+            <div class="col-12 add-box student">
+                <div class="content d-flex justify-content-center mt-3">
+                    <div class="col-9 px-5">
+                        <h3>故事中同學認為自己「只是在開玩笑」、「只是好玩而已」，有那麼嚴重嗎？</h3>
+                        <p><strong>做出貶抑、排擠、欺負、騷擾或戲弄等不友善的行為，讓人覺得難過或受到傷害，影響到正常學習活動，</strong><strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">都屬於霸凌喔！</strong>
+                            不過霸凌在法律上有嚴格定義，所以當疑似或覺得有霸凌時，建議同學先報告老師，讓學校的專家來確認處理。</p>
+                    </div>
+                    <div class="col-3">
+                        <img src="image/addpic/aftermor_bl01.png" style="width: 100%;" />
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="col-4">
+                        <img src="image/addpic/aftermor_all01.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-8 px-5">
+                        <h3>故事中洪恩因為中性的髮型就被戲稱是同性戀，這樣的行為可能涉及微歧視喔！一起來認識什麼是微歧視吧~</h3>
+                        <p> <strong style="font-size: large;">微歧視的「微」並非指歧視的形式很「微小」或是歧視不存在的事物</strong><br>
+                            而是強調受到刻板印象之影響，族群歧視仍舊存在當代社會，只是轉而以各種樣貌幽微地潛藏於<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">各種看似中性或是善意的語言裡</strong>，毫無懷疑地在主流社會中持續地被你我使用；每天持續地說著想著，就強化了刻板印象與偏見，默默傷害社會裡脆弱的那一群人。
+                        </p>
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-3">
+                    <div class="col-7 px-5">
+                        <h3>故事中湘妤因為時常身體不舒服，而被同學說是公主病；洪恩也因為中性的髮型被同學們笑稱與湘妤是同性情侶。面對微歧視事件，該怎麼做呢？</h3>
+                        <p>面對微歧視事件，沒有哪一種回應或化解法是正確、有效的，畢竟根據每個人的價值觀、宗教信仰或人格特質，對於事件的感受都不盡相同<br>不過若是選擇要<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">正面處理</strong>的話，3個小技巧可以幫助你更安全地進行：<br>
+                            <strong>1. 尋找適合回應的時機與場所<br>
+                                2. 將對方的個性、立場納入考量<br>
+                                3. 評估自己對事件的認識程度</strong>
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <img src="image/addpic/aftermor_all02.png" style="width: 100%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 add-box teacher" style="display: none;">
+                <div class="content mt-3">
+                    <div class="col-4">
+                        <img src="image/addpic/aftermor_all03.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-8 px-5">
+                        <h3>我班上的孩子怎麼會從歧視轉變成霸凌？<br>霸凌之所以發生，源自人與人間看世界的角度不同</h3>
+                        <p>今（2023）年發生在某高中園遊會的事件，就是一例。該校一攤位學生以趣味性為出發點，取「烯環鈉」為攤名，並在網路上宣傳。沒想到這個音似「死番仔」的創意沒被讚賞，還遭指歧視原住民，反對聲浪從校內蔓延到新聞上。
+                            當中有學生疑似懷疑校內原民生對外爆料，才引發大量輿論撻伐。氣憤之下，他們用社群軟體成立對話群組，加入原民生並言語攻擊他們。最後校方接到霸凌通報，組織防制校園霸凌因應小組調查始末。
+                            本該是大家同樂的活動，卻以嚴肅的霸凌調查收尾。事情之所以這樣演進，<strong
+                                style="color: #de3a3a;">起因於大眾心中對原住民的負面刻板印象，衍生出相對應的、無心的「微歧視」行為。沒及時剎車的微歧視，再轉變成有惡意的歧視和霸凌。</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-3">
+                    <div class="col-7 px-5">
+                        <h3>微歧視與霸凌的關係</h3>
+                        <p>2022臺灣兒少微歧視現象與校園霸凌調查報告顯示，<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">有將近九成的兒少曾遇過班上的同學被嘲笑或是排擠</strong>，也有32.1%的兒少具微歧視的想法。因此，要阻止霸凌的發生，<strong>在事件早期的「微歧視」、嘲笑發生時就應介入，讓事件止步，避免傷害擴大演變成霸凌。</strong>
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <img src="image/addpic/aftermor_all04.png" style="width: 100%;" />
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-5">
+                    <div class="col-4">
+                        <img src="image/addpic/aftermor_all05.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-7 px-5">
+                        <h3>營造友善環境：歧視發生時機會教育</h3>
+                        <p>台灣性別平等教育協會理事翁麗淑也是新北市鷺江國小教師，她說<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">「性別」是學校最常見的歧視類別</strong>。從她的經驗來看，在歧視發生時教性別議題，孩子更易理解。班上曾有學生嘲笑陰柔男孩，翁麗淑及時用課堂，分享葉永鋕被霸凌的故事，和歌手蔡依林唱〈玫瑰少年〉的由來，讓孩子知道「大家都想活出自己的樣子，但這對他們來說很困難」，進而同理不一樣的同學。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 add-box parents" style="display: none;">
+                <div class="content d-flex justify-content-center mt-3">
+                    <div class="col-3">
+                        <img src="image/addpic/aftermor_all06.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-8 px-5">
+                        <h3>教導孩子避免歧視：爸媽多陪伴，當孩子閱聽守門員</h3>
+                        <p>長期關注媒體識讀議題的《天下雜誌》編輯顧問黃哲斌也是兩個中學男生的爸爸，他主張營造身歷其境的空間，讓孩子「感同身受」，明白自己在網路上歧視人，即便是匿名留言，也會對他人帶來傷害。
+                            描述相關議題的戲劇、電影，都能達到身歷其境功效，「像我們家很常看電影，但兒子都只挑英雄片，我就要求：我先陪你看一部，然後你陪我看一部，」他分享自家做法。
+                            此外，家長也能透過更多的認識，在數位變化極快的現在，了解兒少最常使用哪些網站或軟體，及如何使用。「不能因水很危險，就不讓孩子下水，」他認為網路時代的教養亦然，<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">不能因危險，就不給孩子3C，而是讓他們用，但教他們如何善用、不要誤用，且在必要時當他們的救生員</strong>。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script>
+
+        function makeChoice3(choice) {
+            document.querySelectorAll('.add-box').forEach(content => {
+                content.style.display = 'none';
+            });
+            // 根據不同的身分，顯示相應的補充資訊
+            if (choice === 1) {
+                document.querySelectorAll('.student').forEach(content => {
+                    content.style.display = 'block';
+                });
+
+            } else if (choice === 2) {
+                document.querySelectorAll('.teacher').forEach(content => {
+                    content.style.display = 'block';
+                });
+
+            } else if (choice === 3) {
+                document.querySelectorAll('.parents').forEach(content => {
+                    content.style.display = 'block';
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

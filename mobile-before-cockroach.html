@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Before Cockroach</title>
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        font-size:10px;
+      }
+
+      body{
+        --main-color: #C3DD45;
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+
+      .comic-bg{
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background-image: url(image/all-need-to-use/content-comic-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: fixed;
+        z-index: -100;
+      }
+
+      .eye-open{
+        height: 100vh; 
+        background-color: black;
+        /* margin: 0; */
+        /* position: relative; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(image/cockroach/others-eyes-new.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 15vh;
+      }
+
+      .displacement {
+        filter: url(#displacementFilter3);
+      }
+
+      #eye-svg {
+        /* width: 50%;
+        height: 50vh; */
+        /* position: absolute; */
+      }
+
+      .cockroach-area svg{
+        overflow:visible;
+      }
+
+      #cockroach-path{
+        display: none;
+      }
+
+      .item{
+        height: 100vh;
+        width: 100%;
+        background-image: url(image/cockroach/stare-at.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      section{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      section .scroll{
+        width: 130%;/*原本是100%*/
+        display: flex;
+        background-color: white;
+      }
+
+      section .scroll div{
+        background: white;
+        white-space: nowrap;
+        font-size: 3rem;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        animation: scroll-animate 40s linear infinite;
+        animation-delay: -40s;
+      }
+
+      section .scroll div:nth-child(2){/*有按鈕的話是(3)*/
+        animation: scroll-animate2 40s linear infinite;
+        animation-delay: -20s;
+      }
+
+      @keyframes scroll-animate{
+        0%{
+          transform: translateX(100%);/*translateX(0)代表原本、未加動畫前的位置*/
+        }
+        100%{
+          transform: translateX(-100%);
+        }
+      }
+
+      @keyframes scroll-animate2{
+        0%{
+          transform: translateX(0%);
+        }
+        100%{
+          transform: translateX(-200%);
+        }
+      }
+
+      section .scroll.text1{
+        border: 2px black solid;
+        transform: rotate(20deg) translateY(200px) translateX(-200px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+      section .scroll.text2{
+        border: 2px black solid;
+        transform: rotate(-25deg) translateY(120px) translateX(-200px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+      section .scroll.text3{
+        border: 2px black solid;
+        transform: rotate(-15deg) translateY(0px) translateX(-200px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+      section .scroll.text4{
+        border: 2px black solid;
+        transform: rotate(-2deg) translateY(-150px) translateX(-200px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+      section .scroll.text5{
+        border: 2px black solid;
+        transform: rotate(5deg) translateY(100px) translateX(-200px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      button{
+        margin-left: 110px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .enter-the-beautiest button{
+        height: 5vh;
+        width: 10vw;
+        border: 2px solid black;
+        background-color: #C3DD45;
+        cursor: pointer;
+      }
+
+      .eye-open,
+      .lots-murmur{
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+
+      /* 蟑螂路徑加載時造成手機版右側有多餘空白 */
+      /* max-width: 100%;可解決，但漫畫內容圖會變大 */
+      /* .cockroach-effect{
+        overflow-x: hidden;
+        max-width: 100%;
+      } */
+
+    </style>
+  </head>
+
+  <body>
+    <div id="rotate">
+      <div class="comic-bg"></div>
+      <div class="container front-story">
+        <div class="row col-12">
+          <img src="image/cockroach/cockroach-front.jpg">
+        </div>
+      </div>
+
+      <div class="eye-open">
+        <svg id="eye-svg" width="500" height="280" viewBox="0 0 500 280" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="displacementFilter3">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" result="displacement" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+            <mask id="pathMask">
+              <path id="myPath" viewBox = "0 0 579 290" preserveAspectRatio="xMidYMid slice" d="M 0 140 Q 250 140 500 140 Q 250 140 0 140" fill="white" class="mask" style="filter: url(#displacementFilter3);"></path>
+            </mask>
+          </defs>
+          <image xlink:href="image/cockroach/eye-image-new.png" width="100%" height="100%" mask="url(#pathMask)" />
+        </svg>
+      </div>
+
+      <div class="container middle-story" style="z-index: 100;">
+        <div class="row col-12">
+          <img src="image/cockroach/cockroach-middle.jpg">
+        </div>
+      </div>
+
+      <div class="container cockroach-effect">
+        <div class="row col-12">
+          <div class="cockroach-path-content position-relative" style="z-index: 0;">
+            <img src="image/cockroach/cockroach-find-cockroach.jpg" class="w-100">
+          </div>
+          <div class="cockroach-area" style="position: absolute;">
+            <svg width="80.4" height="55.2" viewBox="0 0 67 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="cockroach-svg">
+                <path d="M31.0567 15.5331C37.5387 17.4064 53.5264 17.678 65.6213 3.77737" stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round"/>
+                <ellipse cx="17.7607" cy="18.039" rx="17.7608" ry="10.3966" transform="rotate(-180 17.7607 18.039)" fill="#3d0e0e"/>
+                <path d="M23.6808 27.2805C24.2584 28.9651 25.067 32.6231 23.6808 33.7783M17.183 27.2805C17.5199 29.0614 17.9916 32.8542 17.183 33.7783M12.1291 27.2805C11.6959 29.4464 10.2808 33.7783 8.08597 33.7783M12.1291 7.78694C11.9365 6.5355 10.8584 3.74384 8.08598 2.58867M17.183 7.78694C18.0012 5.86165 19.1468 1.80892 17.183 1.0003M22.67 8.65332C23.9696 8.172 27.6661 5.59211 28.0127 2.58867" stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M28.0842 19.3383C38.8658 21.2154 59.5915 28.9551 56.2415 44.8965" stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+              </svg>
+            <svg width="536" height="411" viewBox="0 0 536 411" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="cockroach-path" d="M57.7312 1C19.4487 23.8117 -37.8894 74.9223 39.0175 96.8709C135.151 124.307 545.192 123.05 353.678 231.738C309.929 256.566 270.991 265.323 246.65 272.587C151.141 301.085 -16.9441 358.145 256.639 412" stroke="black" stroke-width="2"/>
+            </svg>  
+          </div>
+        </div>
+      </div>
+
+      <div class="kill-cockroach container">
+        <div class="row col-12">
+          <img src="image/cockroach/cockroach-kill-cockroach.jpg">
+        </div>
+      </div>
+      
+      <div class="lots-murmur position-relative">
+        <div class="item">
+          <section>
+            <div class="scroll text1 js-text1">
+              <div>
+                她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
+              </div>
+              <div>
+                她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
+              </div>
+            </div>
+            <div class="scroll text2 js-text2">
+              <div>
+                教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
+              </div>
+              <div>
+                教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
+              </div>
+            </div>
+            <div class="scroll text3 js-text3">
+              <!-- 手機出現一點點 -->
+              <div>
+                好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
+              </div>
+              <div>
+                好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
+              </div>
+            </div>
+            <div class="scroll text4 js-text4">
+              <div>
+                好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
+              </div>
+              <div>
+                好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
+              </div>
+            </div>
+            <div class="scroll text5 js-text5">
+              <!-- 手機沒出現 -->
+              <div>
+                亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
+              </div>
+              <div>
+                亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row col-12">
+          <img src="image/cockroach/cockroach-back.jpg">
+        </div>
+      </div>
+
+      <div class="enter-the-beautiest" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
+        <a href="chapter4-page.html"><button>進入章節四</button></a>
+      </div>
+    </div>
+    
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+  <script src="./mobile-version/mobile-rotate.js"></script>
+  <script src="./mobile-version/mobile-interact.js"></script>
+    
+  <script>
+    gsap.registerPlugin(MotionPathPlugin);
+    gsap.registerPlugin(ScrollTrigger);
+    
+    //eye open
+    function makeEyeOpen(){
+      const pathMask = document.getElementById("myPath");
+      const targetPath = "M 0 140 Q 250 400 500 140 Q 250 -100 0 140";
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".eye-open",
+            start: "top top",
+            end: "center top",
+            scrub: true,
+            pin: true,
+            // markers: true,
+            toggleActions: 'play none none reverse'
+        }
+      });
+
+      tl.to(pathMask, {
+        duration: 1.5, 
+        attr: { d: targetPath }, 
+        ease: "power2.inOut" 
+      });
+    }
+
+    //cockroach path
+    function makeCockroachMove(){
+      let cockroachAnimation = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".cockroach-area",
+          start: "top top",
+          end: "center top",
+          scrub: 0.05,
+          pin: true,
+          // markers: true,
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      cockroachAnimation.to("#cockroach-svg",{
+        duration: 5,
+        ease: "none",
+        motionPath: {
+          path: "#cockroach-path",
+          align: "#cockroach-path",
+          alignOrigin: [0.5, 0.5],
+          autoRotate: true
+        }
+      });
+    }
+    
+    makeEyeOpen();
+    makeCockroachMove();
+  </script>
+
+</html>

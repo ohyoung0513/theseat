@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蟑螂後綠線-綠線</title>
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <style>
+    .comic-bg{
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/content-comic-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
+
+    /* conversation effect */
+    .effect-conversation{
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .right-bg,
+    .left-bg{
+      background-color: #272727;
+      height: 100%;
+      width: 40vw;
+    }
+
+    .left-bg{
+      width: 35%;
+    }
+
+    .left-layout > img,
+    .right-layout > img{
+      bottom: 0;
+      height: 100%;
+    }
+
+    .left-layout{
+      position: absolute;
+      height: 100%;
+    }
+
+    .right-layout{
+      position: absolute;
+      right: 0;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* parallax effect */
+    .parallax-effect{
+      position: relative;
+      overflow: hidden;
+    }
+
+    .layer{
+      width: 100%;
+      position: absolute;
+      /*height: 用js，但壞掉了，先手動設*/
+      height: 250vh;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .eye-bg{
+      background-image: url(image/cockroach/gg/eye.png);
+    }
+
+    .mouth{
+      background-image: url(image/cockroach/gg/mouth.png);
+      /* 下面這樣設的話嘴巴不會有明顯被切掉的感覺，但嘴巴數量就較少*/
+      background-position: bottom center;
+    }
+
+    .people{
+      /* background-image: url(image/cockroach/gg/people.png);
+      width: 30%;
+      right: 0;
+      background-size: fill; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="comic-bg"></div>
+  <div class="front-story container">
+    <div class="col-12">
+      <img src="image/cockroach/gg/front-story.png" class="w-100">
+    </div>
+    <div class="conversation-container">
+      <div class="effect-conversation container position-relative" style="padding: 0;">
+        <div class="left-bg position-absolute"></div>
+        <div class="right-bg position-absolute" style="right: 0;"></div>
+        <div class="left-layout">
+          <img src="image/cockroach/gg/left-1.png" class="img-left-1 position-absolute">
+        </div>
+        <div class="right-layout">
+          <img src="image/cockroach/gg/right-1.png" class="img-right-1 position-absolute">
+        </div>
+        <div class="left-layout">
+          <img src="image/cockroach/gg/frame2-left.jpg" class="position-absolute" id="img-converation">
+        </div>
+        <div class="right-layout">
+          <img src="image/cockroach/gg/frame2-right.jpg" class="position-absolute" id="img-converation">
+        </div>
+        <div class="left-layout">
+          <img src="image/cockroach/gg/frame3-left.jpg" class="position-absolute" id="img-converation">
+        </div>
+        <div class="right-layout">
+          <img src="image/cockroach/gg/frame3-right.jpg" class="position-absolute" id="img-converation">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-12">
+      <img src="image/cockroach/gg/after-conversation-story.png" class="w-100">
+    </div>
+  </div>
+  <div class="parallax-effect">
+    <div class="eye-bg parallax layer" data-depth="0.3"></div>
+    <div class="mouth  parallax layer" data-depth="0.8"></div>
+    <!-- <div class="people parallax layer"></div> -->
+    <div class="content container">
+      <div class="img-pressure-content position-relative">
+        <img src="image/cockroach/gg/pressure-content.png" class="w-100" id="pressureImageHeight">
+        <!-- <div class="classmate  position-absolute" style="right: 0; z-index: 100;">
+          <img src="image/cockroach/gg/people.png" class="w-50">
+        </div> -->
+      </div>
+    </div>
+    
+  </div>
+  <div class="back-story">
+    <div class="col-12">
+      <img src="image/cockroach/gg/after-pressure-story.png" class="w-100">
+    </div>
+  </div>
+
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // parallax背景圖高度跟內容圖同高，但壞掉了q
+    function getImageHeight(){
+      const pressureImage = document.querySelector('#pressureImageHeight');
+      let layer = document.querySelector('.layer');
+
+      pressureImage.onload = function() {
+        const imageHeight = pressureImage.height;
+        console.log(imageHeight);
+        layer.style.height = `${imageHeight}px`;
+        console.log(layer.style.height);
+      };
+    }
+
+    function conversationEffect(){
+      const pinParent = document.querySelector(".conversation-container");
+      const imgs = gsap.utils.toArray("[id^='img-converation']");
+
+      gsap.set(imgs, {yPercent: 101});
+
+      const animation = gsap.to(imgs, {
+        yPercent: 0, duration: 1, stagger: 1.5, ease: "linear"
+      })
+
+      // const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: ".effect-conversation",
+      //     start: "top center-=20%",
+      //     end: "bottom center-=20%",
+      //     scrub: true,
+      //     pin: pinParent,
+      //     markers: true,
+      //   }
+      // });
+
+      ScrollTrigger.create({
+        trigger: ".effect-conversation",
+        start: "top center-=25%",
+        end: "bottom top",
+        scrub: true,
+        pin: pinParent,
+        animation: animation,
+        // markers: true,
+      })
+    }
+
+    function parallaxEffect(){
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".parallax-effect",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      gsap.utils.toArray(".parallax").forEach(layer => {
+        const depth = layer.dataset.depth;
+        const movement = -(layer.offsetHeight * depth)
+        tl.to(layer, {y: movement, ease: "none", duration: 5}, 0)
+      });
+    }
+
+    conversationEffect();
+    parallaxEffect();
+    // getImageHeight();
+
+    
+
+
+
+  </script>
+</body>
+</html>

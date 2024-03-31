@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校花</title>
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .comic-bg {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/content-comic-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
+
+    .bg-break {
+      background-image: url(image/flower/bg-break.png);
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      width: 100%;
+    }
+
+    .noise-bg {
+      background: repeating-linear-gradient(#111, #111, 50%, #fff 50%, #fff);
+      background-size: 10px 10px;
+      /* background-size: contain; */
+      filter: url(#noiseFilter);
+      /* height: 150%; */
+    }
+
+    .write-hw svg {
+      /* background: lightcoral; */
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      left: 0;
+      /* top: 65%; */
+      /* transform: translate(-50%, -50%); */
+    }
+
+    /* custom scrollbar */
+    body::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #585858;
+      border-radius: 8px;
+      border: 4px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="rotate">
+    <!-- Modal -->
+    <div class="modal fade" id="result" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="font-family: sans-serif;">試玩版體驗結束</h5>
+          </div>
+          <div class="modal-body">
+            <h5 style="letter-spacing: 2px;">感謝您的遊玩</h5>
+            <h6 style="letter-spacing: 2px;">若有任何心得想分享，歡迎至「我有話要說」留言！</h6>
+            <div>
+              <img class="pic" src="image/thankyou.png">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="home-page.html"><button type="button" class="btn btn-primary modalbutton">回到首頁</button></a>
+            <a href="message-page.html"><button type="button" class="btn btn-primary modalbutton">確認</button></a>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comic-bg"></div>
+    <div class="front-story container">
+      <div class="content col-12">
+        <img src="image/flower/flower-front.jpg" class="w-100">
+      </div>
+    </div>
+    <div class="noise-effect" style="position: relative; overflow: hidden;">
+      <div class="noise-bg">
+        <svg id="noiseSvg" width="100%" xmlns='http://www.w3.org/2000/svg' preserveAspectRatio="xMidYMid meet">
+          <filter id='noiseFilter'>
+            <feTurbulence id="turbulence" type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch' />
+            <feDisplacementMap in="SourceGraphic" scale="60" />
+          </filter>
+        </svg>
+      </div>
+      <div class="absolute-wrapper position-absolute top-0 start-50 translate-middle-x">
+        <div class="container" style="width: 80vw;">
+          <div class="press2 col-12">
+            <img src="image/flower/press2.png" id="js-forSvgHeight" class="w-100">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="write-hw container">
+      <div class="content col-12">
+        <img src="image/flower/flower-write-hw-up.jpg" class="w-100">
+        <div class="circle-scale-effect">
+          <img src="image/flower/flower-write-hw-down.png" class="w-100">
+          <svg viewBox="0 0 1920 1080" fill="none" preserveAspectRatio="xMidYMin slice">
+            <defs>
+              <mask id="circleMask">
+                <circle cx="450" cy="250" r="180" fill="white" class="circle" />
+              </mask>
+            </defs>
+            <rect width="1920" height="1080" fill="#000000" width="100%" height="100%" mask="url(#circleMask)" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="memory container" style="padding: 0;">
+      <div class="content col-12">
+        <img src="image/flower/flower-memory.jpg" class="w-100">
+      </div>
+    </div>
+    <div class="parallax-effect" id="parallax-effect-trigger">
+      <div class="bg-break">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 ms-auto pic-phone" data-speed="0">
+              <img src="image/flower/phone.png" class="w-100">
+            </div>
+            <div class="col-10 ms-auto pic-rank" data-speed="0.2">
+              <img src="image/flower/rank.png" class="w-100">
+            </div>
+            <div class="col-12 ms-5 pic-face" data-speed="0.5">
+              <img src="image/flower/face.png" class="w-50">
+            </div>
+          </div>
+        </div>
+        <div class="container take-care">
+          <div class="row">
+            <div class="pic-take-care" class="col-12" data-speed="0.8" style="margin-top: 5%;">
+              <img src="image/flower/take-care.png" class="w-50">
+            </div>
+          </div>
+        </div>
+        <div class="container question-and-react">
+          <div class="row">
+            <div class="pic-left-face col-3 align-self-center" data-speed="0.2">
+              <img src="image/flower/scared.png" class="w-100">
+            </div>
+            <div class="pic-talking col-4 align-self-center" data-speed="0.6">
+              <img src="image/flower/speak1.png" class="w-100">
+            </div>
+            <div class="pic-right-face col-5 align-self-end" data-speed="1">
+              <img src="image/flower/sad.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-4 pic-agree offset-md-2 offset-sm-2" data-speed="0.2" style="margin-top: 5%;">
+              <img src="image/flower/agree.png" class="w-100">
+            </div>
+            <div class="col-5 pic-shocked-up offset-md-1 offset-sm-1" data-speed="-0.1">
+              <img src="image/flower/shocked-up.png" class="w-100">
+            </div>
+            <div class="col-5 pic-hand" data-speed="-0.2">
+              <img src="image/flower/hand.png" class="w-100">
+            </div>
+            <div class="col-6 pic-shocked-down" data-speed="-0.5">
+              <img src="image/flower/shocked-down.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="did-not-vote" data-speed="-0.2">
+          <img src="image/flower/did-not-vote.png" class="w-100">
+        </div>
+      </div>
+    </div>
+
+    <div class="back-story container">
+      <div class="content col-12">
+        <img src="image/flower/flower-back.jpg" class="w-100">
+      </div>
+    </div>
+    <div class="pop-effect container" style="margin-top: -10%;">
+      <div class="row">
+        <div class="col-7">
+          <img src="image/flower/flower-back-row1.png" class="w-100">
+        </div>
+        <div class="col-7 offset-md-1">
+          <img src="image/flower/flower-back-row2.png" class="w-100">
+        </div>
+        <div class="row justify-content-end" style="margin-top: -25%;">
+          <div class="col-10">
+            <img src="image/flower/flower-back-row3.png" class="w-100">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <iframe id="addFrame" src="add_beauty.html"
+      style="width: 100%; height: 1500px; border: none;"></iframe>
+    <div class="go-next-web" style="display: flex; justify-content: center; margin-bottom: 5%;">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#result"><button>試玩結束To be continued</button></a>
+    </div>
+  </div>
+
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./mobile-version/mobile-rotate.js"></script>
+  <script src="./mobile-version/mobile-interact.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    //噪點背景
+    function noiseBgEffect() {
+      const element = document.querySelector('.noise-bg');
+      const feTurbulence = element.querySelector('#noiseFilter feTurbulence');
+      let animation;
+      let isMouseScrolling = false;
+
+      //讓noise BG的高度 = noise區域圖片的高度。但數值是固定的px，拉伸無法自適應改變
+      window.addEventListener('load', function () {
+        // 取得圖片高度
+        const imageHeight = document.getElementById("js-forSvgHeight").height;
+        console.log("image height = " + `${imageHeight}`);
+
+        // 設定 SVG 的 viewBox
+        const svgElement = document.getElementById("noiseSvg");
+        svgElement.setAttribute('viewBox', `0 0 320 ${imageHeight}`);
+        svgElement.setAttribute('height', `${imageHeight}`);
+        // console.log(svgElement);
+        //多加這一行scrolltrigger markers位置才會正確，錯誤原因：Loading new content but not refreshing
+        ScrollTrigger.refresh();
+      });
+
+      // noise背景動態
+      function playAnimation() {
+        if (!animation) {
+          animation = gsap.to(feTurbulence, {
+            duration: 1,
+            attr: { baseFrequency: "1" },
+            ease: "power4.out",
+            repeat: -1,
+            yoyo: true,
+          });
+        }
+      }
+
+      function stopAnimation() {
+        if (animation) {
+          animation.kill(); // 停止動畫
+          animation = null; // 釋放資源
+        }
+      }
+
+      ScrollTrigger.create({
+        trigger: "#js-forSvgHeight",
+        start: "top top",
+        end: "bottom center",
+        // markers: true,
+        onEnter: () => {
+          // 進入 .noise-effect 區域後，開始偵測滑鼠是否滾動
+          isMouseScrolling = true;
+        },
+        onLeave: () => {
+          // 離開 .noise-effect 區域後，停止動畫並重置滑鼠滾動狀態
+          stopAnimation();
+          isMouseScrolling = false;
+        },
+      });
+
+      document.addEventListener('wheel', () => {
+        if (isMouseScrolling) {
+          playAnimation();
+
+          // 滑鼠停止滾動 100 毫秒後停止動畫
+          setTimeout(() => {
+            stopAnimation();
+          }, 100);
+        }
+      });
+
+      // animation.scrollTrigger.refresh();
+      //ScrollTrigger.refresh();
+    }
+
+    //思敏圓圈放大
+    function circleScale() {
+      const circleTrigger = document.querySelector(".circle-scale-effect");
+
+      let circleAnima = gsap.timeline({
+        scrollTrigger: {
+          trigger: circleTrigger,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+          // markers: true,
+          // toggleActions: 'play none none reverse'
+        }
+      });
+
+      circleAnima.to('.circle', {
+        attr: { r: 1800 },
+      });
+    }
+
+    //parallax-scroll
+    function parallaxScroll() {
+      let postsSection = document.querySelector('#parallax-effect-trigger');
+      gsap.to("[data-speed]", {
+        y: (i, el) => (-1 * parseFloat(el.getAttribute("data-speed"))) * (postsSection.offsetHeight / 3),
+        ease: "none",
+        scrollTrigger: {
+          trigger: postsSection,
+          invalidateOnRefresh: true,
+          scrub: 0.1,
+          // markers: true,
+          start: 'top bottom'
+        }
+      });
+    }
+
+    //pop-effext
+    function popEffect() {
+      let isAnimating = false;
+
+      const trigger = ScrollTrigger.create({
+        trigger: ".pop-effect",
+        start: "top top",
+        end: "bottom top",
+        onUpdate: (self) => {
+          if (!isAnimating) {
+            isAnimating = true;
+
+            gsap.to(".pop-effect", {
+              scale: 1.05,
+              duration: 0.5,
+              ease: "circ.out",
+              // markers: true,
+              onComplete: () => {
+                gsap.to(".pop-effect", {
+                  scale: 1,
+                  duration: 0.5,
+                  ease: "circ.out",
+                  // markers: true,
+                  onComplete: () => {
+                    isAnimating = false;
+                  },
+                });
+              },
+            });
+          }
+        },
+      });
+
+      // 滾動事件監聽
+      window.addEventListener("wheel", () => {
+        // 滾動時，更新 ScrollTrigger
+        trigger.update();
+      });
+    }
+
+    noiseBgEffect();
+    circleScale();
+    parallaxScroll();
+    popEffect();
+
+  </script>
+
+
+
+</body>
+
+</html>

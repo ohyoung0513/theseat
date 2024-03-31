@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: transparent;
+        }
+
+        .add-box {
+            border: 2px #adadad solid;
+            border-radius: 0.5rem;
+            padding: 3rem;
+        }
+
+        .add {
+            font-family: 'Noto Serif TC', serif;
+            text-align: center;
+            letter-spacing: 0.2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-btn {
+            font-family: 'Noto Serif TC', serif;
+            font-size: large;
+            letter-spacing: 0.2rem;
+            height: 50px;
+            background: #313131;
+            color: white;
+            font-weight: bold;
+            margin: 0px 10px 0px 10px;
+            border-radius: 10px 10px 0 0;
+            border: transparent;
+        }
+
+        .add-btn:hover {
+            background-color: #6c6c6c;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .add-btn:focus {
+            background-color: #C3DD45;
+            color: #313131;
+            transition: 0.3s;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .content h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            line-height: 2.5rem;
+        }
+
+        p {
+            font-size: medium;
+            line-height: 2.5rem;
+            margin-top: 2vh;
+            letter-spacing: 0.1rem;
+        }
+
+        h5 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text d-flex flex-column justify-content-center align-items-center" style="margin-top: 10vh;">
+            <div class="box add">
+                <h1 style="font-weight: bold;">如果遇到類似的情形的話...？</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="display: flex; justify-content: center; margin-top: 5vh;">
+            <h5 class="col-2" style="justify-content: flex-end;">給</h1>
+                <button autofocus class="col-2 add-btn" onclick="makeChoice3(1)">學生</button>
+                <button class="col-2 add-btn" onclick="makeChoice3(2)">教師</button>
+                <button class="col-2 add-btn" onclick="makeChoice3(3)">家長</button>
+                <h5 class="col-2">的小補充！</h1>
+        </div>
+        <div class="row">
+            <div class="col-12 add-box student">
+                <div class="content d-flex justify-content-center mt-3 mb-3">
+                    <div class="col-3">
+                        <img src="image/addpic/bea_01.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-5 px-5">
+                        <h3>故事中，湘妤遭遇到昔日好友的霸凌，她應該怎麼辦？</h3>
+                        <p><strong>1. 向導師、家長反映，向學校投訴信箱投訴<br>
+                            2. 向縣市反霸凌投訴專線投訴<br>
+                            3. 向教育部24小時專線1953投訴<br>
+                            4. 於校園生活問卷中提出<br>
+                            5. 其它（好同學、好朋友）<br>
+                            6. 向教育部防制校園霸凌專區留言專區反映</strong></p>
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-5">
+                    <div class="col-5 px-5">
+                        <h3>其他反映管道</h3>
+                        <p><strong style="font-size: large; color: #de3a3a;">兒福聯盟</strong><br>
+                            <strong>哎喲喂呀兒童專線：0800-003-123<br>
+                                服務時間：週一至週五，下午四點半至七點半<br>
+                                服務對象：12歲以下兒童<br>
+                                我想聽你說 LINE 官方帳號：@antibullying<br>
+                                <br>
+                                兒福聯盟少年專線：0800-001769<br>
+                                服務時間：週二至週六，下午四點半至七點半<br>
+                                服務對象：13歲～未滿18歲的少年<br>
+                                少年專線 Line 線上聊 @youthline</strong></p>
+                    </div>
+                    <div class="col-4">
+                        <img src="image/addpic/bea_02.png" style="width: 100%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 add-box teacher" style="display: none;">
+                <div class="content d-flex justify-content-center mt-5">
+                    <div class="col-4">
+                        <img src="image/addpic/bea_03.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-7 px-5">
+                        <h3>處理霸凌的第一原則永遠是...？<br>
+                            老師「有感」！</h3>
+                        <p>任何一個孩子，都可能突然成為被霸凌的<strong style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">「黑羊」</strong>。相信大部分的學校老師都很關心校園霸凌的議題，但面對日復一日、層出不窮的霸凌事件，以下提供老師處理霸凌的5項具體建議：<br>
+                            <strong>1. 用教材與影片宣導，宣示班級對霸凌零容忍。<br>
+                                2. 一定要找雙方家長到校，遇到家長不理性，輔導室、警方、司法等管道，要一層層使用。自己的大哥帶班時，班上有位長期被校園幫派毆打的學生，他帶孩子去醫院驗傷，向警方備案後，孩子才終於脫離霸凌地獄。<br>
+                                3. 多找特殊的學生聊心事，讓他們相信你，真正的關心須從建立關係開始。<br>
+                                4. 三思「霸凌者」的說詞，不要被騙了。<br>
+                                5. 跟被霸凌者說：「我挺你到底！」</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 add-box parents" style="display: none;">
+                <div class="content d-flex justify-content-center mt-5 ms-3">
+                    <div class="col-3">
+                        <img src="image/addpic/bea_04.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-7 px-5 ms-3">
+                        <h3>我得知孩子被霸凌時，可以怎麼做呢？</h3>
+                        <p><strong style="font-size: large;">#孩子被霸凌，真的不是他的錯</strong><br>
+                            具備某些特質的孩子，較容易成為被霸凌的對象，像是跟同儕不一樣(外型、特質、興趣…)、看起來弱小好欺負、講話比較直/不懂得委婉…等，這樣的孩子需要機會去改變，
+                            但這並不代表他們應該被欺負和教訓，尤其是家長的回應沒有給予孩子足夠的信任和安全感，更容易讓孩子懷疑自己被霸凌是不是理所當然的？<br>
+                            <strong style="font-size: large;">所以當孩子向我們釋放出求救訊號後，我們可以用其他更適合的方式表達我們對孩子的擔心和關心：</strong><br>
+                            <strong style="color: #de3a3a;">1. 同理和關心孩子的身心狀況<br>
+                                2. 肯定孩子的求助行動<br>
+                                3. 鼓勵孩子多說一點、蒐集更多相關資訊<br>
+                                4. 和孩子討論出解決的共識</strong></p>
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-5">
+                    <div class="col-6 px-5">
+                        <h3>如果學校不處理霸凌怎麼辦？</h3>
+                        <p>若學校對於孩子被霸凌的狀況<strong style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">態度消極</strong>，除了申訴之外，家長應：<br>
+                            <strong>1. 與孩子溝通該不該轉學<br>
+                                2. 確保校園輔導機制介入<br>
+                                3. 給孩子持續的心理支持</strong></p>
+                    </div>
+                    <div class="col-4">
+                        <img src="image/addpic/bea_05.png" style="width: 100%;" />
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-5">
+                    <div class="col-4">
+                        <img src="image/addpic/bea_06.png" style="width: 100%;" />
+                    </div>
+                    <div class="col-7 px-5">
+                        <h3>我發現我的孩子在霸凌別人，該怎麼辦？</h3>
+                        <p><strong style="font-size: large; color: #de3a3a;">1. 在霸凌行為開始之前阻止</strong><br>
+                            教導您的孩子霸凌相關知識。您的孩子可能不知道他做的事是會讓人受傷的，也提醒他霸凌行為需要承擔法律責任。<br>
+                            <strong style="font-size: large; color: #de3a3a;">2. 讓您的家中是「沒有欺凌行為」的</strong><br>
+                            孩子通過父母學習行為。在家中接觸到侵略性行為或者過於嚴格的環境會使孩子更容易在學校欺凌他人。父母/照顧者應該在與他人和孩子的關係中為他們樹立正面的榜樣。<br>
+                            <strong style="font-size: large; color: #de3a3a;">3. 關心孩子的自尊問題</strong><br>
+                            自卑的孩子常常透過霸凌來讓自己感覺更好。即使是看起來很受歡迎、很受歡迎的孩子也可能有卑鄙的傾向。父母應約束不良行為(mean behavior)並糾正。
+                            </p>
+                    </div>
+                </div>
+                <div class="content d-flex justify-content-center mt-5">
+                    <div class="col-7 px-5">
+                        <h3>兒福聯盟校園霸凌協助資源</h3>
+                        <p><strong>爸媽call-in教養專線：0800-532-880（我想要，幫幫您）<br>
+                            服務時間：週一至週五，下午兩點至五點<br>
+                            服務對象：有18歲以下的孩子，並且有意願與社工討論親職教養問題的家長</strong></p>
+                    </div>
+                    <div class="col-4">
+                        <img src="image/addpic/bea_07.png" style="width: 100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script>
+
+    function makeChoice3(choice) {
+        document.querySelectorAll('.add-box').forEach(content => {
+                content.style.display = 'none';
+            });
+        // 根據不同的身分，顯示相應的補充資訊
+        if (choice === 1) {
+            document.querySelectorAll('.student').forEach(content => {
+                content.style.display = 'block';
+            });
+
+        } else if (choice === 2) {
+            document.querySelectorAll('.teacher').forEach(content => {
+                content.style.display = 'block';
+            });
+            
+        } else if (choice === 3) {
+            document.querySelectorAll('.parents').forEach(content => {
+                content.style.display = 'block';
+            });
+        }
+    }
+    </script>
+    
+</body>
+</html>

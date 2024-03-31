@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我有話要說</title>
+
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .bg {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/message_bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
+
+    .main-topic-text {
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: #000;
+    }
+
+    .main-topic-text .small-size-text {
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    .subtitle-text,
+    .show-mwssagw-text,
+    .button-text {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #000;
+    }
+
+    .button-text {
+      color: white;
+    }
+
+    .border {
+      border-bottom: 1px #BBBBBB solid
+    }
+
+    .box {
+      border-bottom: 1px #BBBBBB solid;
+      height: 7vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-box {
+      border-bottom: 1px #BBBBBB solid;
+      border-top: 1px #BBBBBB solid;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .click-to-show-message {
+      height: 280px;
+      width: 280px;
+      border-radius: 50%;
+      border: 1px black solid;
+      cursor: pointer;
+      visibility: hidden;
+    }
+
+    .show-message-container {
+      background-image: url(image/all-need-to-use/card-container-bg.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: fixed;
+    }
+
+    .button {
+      height: 40px;
+      width: 120px;
+      border-radius: 20px;
+      border: 0px;
+      background-color: #585858;
+      color: white;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: black;
+      transition: 0.3s;
+    }
+
+    .button:active {
+      color: #ACACAC;
+      transition: 0.1s;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .wrapper .card {
+      height: 120px;
+      width: 120px;
+      background-color: #ededed;
+      margin: 5px;
+    }
+
+    #layout-left {
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      position: absolute;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 1.4rem;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 500;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: 0.4s ease-in-out;
+    }
+
+    .card:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="all-page-container d-flex flex-column justify-content-center" style="height: 100vh;">
+    <div class="container">
+      <header>
+        <div class="main-topic">
+          <div class="main-topic-text box">
+            <p>我有話要說 <span class="small-size-text">MESSAGE</span></p>
+            <!-- <div class="border"></div> -->
+          </div>
+        </div>
+        <div class="subtitle">
+          <div class="subtitle-text box">
+            想對過去的自己 / 加害者 / 被害者 說些什麼
+            <!-- <div class="border"></div> -->
+          </div>
+        </div>
+      </header>
+      <div class="show-message-container d-flex justify-content-center align-items-center position-relative"
+        style="height: 60vh;">
+        <div class="click-to-show-message d-flex justify-content-center align-items-center position-absolute">
+          <div class="show-mwssagw-text">
+            顯示公開留言
+          </div>
+        </div>
+
+        <div class="message-card d-flex flex-column justify-content-center align-items-center position-absolute">
+          <div class="wrapper d-flex first-row">
+            <div class="card" id="layout-left">
+              <div class="tooltip">
+                <p id="p12">未來的我始終都在贖罪</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="tooltip">
+                <p id="p11">Love & Peace</p>
+              </div>
+            </div>
+            <div class="card" id="layout-left">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p10">曾經也作為旁觀者冷眼旁觀一切，看完之後有更了解將來若是遇到類似的情形該怎麼做</p>
+              </div>
+            </div>
+            <div class="card" id="layout-left">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p9">希望不要再有更多的霸凌事件發生...</p>
+              </div>
+            </div>
+            <div class="card" id="layout-right">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p8">霸凌已然發生，我又能說什麼呢</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p7">我也曾作為霸凌事件的破口，但要真的抵抗整個霸凌者建立的社交圈，不是用說的那麼簡單</p>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper d-flex second-row">
+            <div class="card">
+              <div class="tooltip">
+                <p id="p6">希望旁觀者們真的能像劇情中一樣，用於挺身而出，而且一個人的力量真的不夠，很容易會被反過來被霸凌</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p5">感覺校園中真的常會發生那些看不出來到底是不是在開玩笑的小事件，這種時候旁人也很難插手</p>
+              </div>
+            </div>
+            <div class="card" id="layout-left">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p4">以前有看過看似欺負但雙方都笑得很開心的衝突(?)，這種時候真的很搞不懂到底要不要干預</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p3">我曾經是個霸凌者，直到上了國中看到相關的文獻才發現自己在霸凌，馬上就連絡以前欺負的對象道歉。至今還是很後悔。</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p2">我相信那種完全不後悔，樂在其中的霸凌者還是存在。別想我會原諒他們</p>
+              </div>
+            </div>
+            <div class="card" id="layout-left">
+              <div class="tooltip">
+                <!-- p標籤不能換行 -->
+                <p id="p1">在這裡留完言，記得不要再做出會讓自己後悔的選擇了</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-container" style="height: 7vh;">
+        <div class="footer-box">
+          <div class="button-container d-flex flex-column align-items-end" style="width: 100%;">
+            <a href="write-message.html">
+              <div class="button d-flex justify-content-center align-items-center">
+                <div class="button-text">留下留言</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    //留言
+    document.addEventListener('DOMContentLoaded', function () {
+      const maxFields = 12; // 可顯示的欄位數
+      const count = parseInt(localStorage.getItem('count')) || 0; // 讀取存儲次數，如果不存在則為 0
+      const startIndex = Math.max(1, count - maxFields + 1); // 起始索引
+      const endIndex = count; // 結束索引
+
+
+      // 將每次輸入的內容顯示在相應的 <p> 欄位中
+      for (let i = startIndex; i <= endIndex; i++) {
+        const messageContent = localStorage.getItem('message' + i);
+        const pElement = document.getElementById('p' + (i - startIndex + 1));
+        if (pElement) {
+          pElement.innerText = messageContent;
+        }
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
