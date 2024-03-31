@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蟑螂爬行效果測試</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #cockroach-path{
+    /* display: none; */
+  }
+
+  svg{
+    overflow:visible;
+  }
+
+</style>
+
+<body>
+  <div class="container">
+    <div class="row col-12">
+      <div class="cockroach-path-content position-relative">
+        <img src="image/cockroach/cockroach-find-cockroach.jpg">
+      </div>
+
+      <div class="position-absolute cockroach-area">
+        <svg width="169" height="171" viewBox="0 0 169 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="cockroach-svg">
+            <path d="M107.54 53.3231C129.985 59.81 185.345 60.7504 227.226 12.6168" stroke="black" stroke-width="5" stroke-linecap="round"/>
+            <ellipse cx="61.5" cy="62" rx="61.5" ry="36" transform="rotate(-180 61.5 62)" fill="black"/>
+            <path d="M82.0001 94C84.0001 99.8333 86.8001 112.5 82.0001 116.5M59.5 94C60.6667 100.167 62.3 113.3 59.5 116.5M42 94C40.5 101.5 35.6 116.5 28 116.5M42 26.5C41.3333 22.1667 37.6 12.5 28 8.49999M59.5 26.5C62.3333 19.8333 66.3 5.8 59.5 3M82.0001 26.5C86.5 24.8333 95.8 18.9 97 8.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+            <path d="M97.2465 66.5C134.58 73 206.347 99.8 194.747 155" stroke="black" stroke-width="5" stroke-linecap="round"/>
+          </g>
+        </svg>
+
+        <svg width="1181" height="905" viewBox="0 0 1181 905" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="cockroach-path" d="M170.836 1C56.2301 75.041 -115.423 240.933 114.813 312.172C402.609 401.222 1554.44 322.117 1056.81 749.915C949.738 841.966 826.548 893.161 766.308 904" stroke="black" stroke-width="2"/>
+        </svg>
+          
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+<script>
+  gsap.registerPlugin(MotionPathPlugin);
+
+  let cockroachAnimation = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".cockroach-area",
+      start: "top top",
+      end: "center top",
+      scrub: 0.1,
+      pin: true,
+      markers: true,
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  cockroachAnimation.to("#cockroach-svg",{
+    duration: 5,
+    ease: "none",
+    motionPath: {
+      path: "#cockroach-path",
+      align: "#cockroach-path",
+      alignOrigin: [0.5, 0.5],
+      autoRotate: true
+    }
+  });
+
+  //這裡是動畫
+  // const cockroachAnimation = gsap.to("#cockroach-svg",{
+  //   duration: 5,
+  //   ease: "none",
+  //   motionPath: {
+  //     path: "#cockroach-path",
+  //     align: "#cockroach-path",
+  //     alignOrigin: [0.5, 0.5],
+  //     autoRotate: true
+  //   },
+  // })
+</script>
+</html>

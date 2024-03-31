@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crack Effect Test</title>
+  <style>
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      /* transition: opacity 0.5s ease; */
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-container">
+  <img src="../image/after-morning-ing/g/crack-1.png" alt="Image 1" id="crack-1">
+  <img src="../image/after-morning-ing/g/crack-2.png" alt="Image 2" id="crack-2">
+  <img src="../image/after-morning-ing/g/crack-3.png" alt="Image 3" id="crack-3">
+  <img src="../image/after-morning-ing/g/crack-4.png" alt="Image 4" id="crack-4">
+</div>
+
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // const images = document.querySelectorAll('.image-container img');
+  const pinParent = document.querySelector(".image-container");
+
+  const crackImageAnimation = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.image-container',
+      start: 'top center',
+      end: 'bottom center',
+      // pin: pinParent,
+      markers: true,
+      scrub: true,
+    }
+  });
+
+  crackImageAnimation
+    .to("#crack-1", {opacity: 1,})
+    .to("#crack-2", {opacity: 1,})
+    .to("#crack-3", {opacity: 1,})
+    .to("#crack-4", {opacity: 1,})
+
+
+
+  // images.forEach((image, index) => {
+  //   gsap.to(image, {
+  //     opacity: 1,
+  //     scrollTrigger: {
+  //       trigger: '.image-container',
+  //       start: 'top center',
+  //       end: 'bottom center',
+  //       markers: true,
+  //       scrub: true,
+  //       // onEnter: () => {
+  //       //   gsap.to(image, { opacity: 1, duration: 1 });
+  //       // },
+  //       // onLeaveBack: () => {
+  //       //   gsap.to(image, { opacity: 0, duration: 1 });
+  //       // }
+  //     },
+  //   });
+  // });
+</script>
+
+</body>
+</html>

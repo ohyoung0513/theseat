@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: transparent;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .tags {
+            width: auto;
+            height: 20vh;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+
+        .tagbtn {
+            width: 5vw;
+            height: 5vh;
+            border-radius: 5px 0px 0px 5px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .tagbtn p {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+
+        .add-content {
+            width: 90%;
+            height: 60vh;
+            border: 2px #adadad solid;
+            padding: 3rem;
+
+        }
+        .circle{
+            display: flex;
+            flex-direction: column;
+        }
+        .dot {
+            height: 25px;
+            width: 25px;
+            border: 1px #000 solid;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="tags">
+                <div class="tagbtn" style="background: #000;">
+                    <p class="tagname" style="color: #ffffff;">學生</p>
+                </div>
+                <div class="tagbtn" style="background: #959595;">
+                    <p class="tagname" style="color: #000;">教師</p>
+                </div>
+                <div class="tagbtn" style="background: #959595;">
+                    <p class="tagname" style="color: #000;">家長</p>
+                </div>
+            </div>
+            <div class="add-content">
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messy Line Effect Test</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <style>
+    .messy-line-effect{
+      /* 不知道為什麼加了反而出錯 */
+      /* overflow-x: hidden; */
+    }
+
+    .content-story{
+      z-index: 100;
+    }
+
+    #messyPath{
+      stroke-dasharray: 23922;
+      stroke-dashoffset: 23922;
+      pointer-events: none;
+      /* animation: dash 10s linear forwards; */
+    }
+
+    /* @keyframes dash {
+      from {
+        stroke-dashoffset: 23922;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    } */
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="messy-line-effect position-relative">
+    <div class="content-story container position-absolute">
+      <img src="../image/after-morning-ing/r/r-story.png" class="w-100">
+    </div>
+    <div class="path-container container position-absolut ">
+      <svg viewBox="0 0 1730 2488" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <path id="messyPath" d="M1097 0.5C1087.83 112.333 945.3 329.2 448.5 302C-172.5 268 -121 107 448.5 214.5C1018 322 1466 417.5 1527.5 381.5C1589 345.5 275.999 292 200.499 349.5C124.999 407 534 331.5 637 349.5C740 367.5 214.499 381.5 200.499 427C186.5 472.5 1615.5 641 1571.5 476.5C1527.5 312 353.5 480.5 264 540C174.5 599.5 1073 502.5 1160.5 504.5C1248 506.5 1341.5 576 1325.5 627.5C1309.5 679 388.5 641.5 357 693C325.5 744.5 825.5 714.5 1075.5 595.5C1325.5 476.5 1438.5 603.5 1428.5 659C1418.5 714.5 654.5 556.5 666.5 752.5C678.5 948.5 1543.5 659 1621 778C1698.5 897 1015.5 706.5 966 778C916.5 849.5 1531.5 827.5 1603 913C1674.5 998.5 1063.5 847.5 1047.5 913C1031.5 978.5 1618.5 837.5 1650.5 891C1682.5 944.5 1198 972 1214 1071.5C1230 1171 1742 982 1728 1131C1714 1280 1307 1183 1160.5 1222.5C1043.3 1254.1 1055 1383.67 1075.5 1444.5C1139.67 1435.33 1276.3 1430.5 1309.5 1484.5C1351 1552 892.5 1514.5 914.5 1484.5C936.5 1454.5 1341.5 1466.5 1325.5 1538C1309.5 1609.5 914.5 1462.5 914.5 1538C914.5 1613.5 1333.5 1413 1369 1516C1404.5 1619 871 1562 879 1601.5C880.672 1609.76 897.136 1614.04 921.956 1616.22M921.956 1616.22C1015.87 1624.49 1229.42 1602.77 1214 1653C1194.5 1716.5 964.912 1547.95 921.956 1616.22ZM921.956 1616.22C934.804 1635.82 995.4 1682.5 1135 1712.5C1226 1746 1194.5 1766 1135 1768C1075.5 1770 532 1693 643 1792C754 1891 1178.5 1924.5 1182.5 1881C1186.5 1837.5 801 1811.5 722 1881C643 1950.5 1019.5 1884.5 1047.5 1930.5C1075.5 1976.5 912.5 1861.5 855 1901C797.5 1940.5 960.5 1937 1018 1978.5C1064 2011.7 1075.5 2251.33 1075.5 2367V2488" stroke="black" stroke-width="3"/>
+      </svg>    
+    </div>
+  </div>
+</div>
+  
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // print path length
+  path = document.getElementById("messyPath");
+  console.log(path.getTotalLength());
+
+  function messyPathAnimation(){
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".path-container",
+        start: "top top+=20%",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      }
+    });
+
+    tl.to("#messyPath", { strokeDashoffset: 0, duration: 10 });
+  }
+
+  messyPathAnimation();
+
+
+</script>
+
+</body>
+</html>

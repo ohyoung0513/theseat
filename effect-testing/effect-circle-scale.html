@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圖片放大-砰砰跳</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 200vh; /* 足夠長的頁面以觸發滾動 */
+    }
+
+    .section {
+      /* height: 100vh; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .zoom-content {
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="section">
+  <div class="zoom-container" id="zoom-container">
+    <div class="zoom-content">
+      <img src="https://via.placeholder.com/800x400" alt="Parallax Image">
+      <p>Your content here</p>
+    </div>
+    <div class="zoom-content">
+      <img src="https://via.placeholder.com/800x400" alt="Parallax Image">
+      <p>Your content here</p>
+    </div>
+    <div class="zoom-content">
+      <img src="https://via.placeholder.com/800x400" alt="Parallax Image">
+      <p>Your content here</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // let isScrolling = false;
+  // let isAnimating = false;
+
+  // // 監聽滾動事件
+  // window.addEventListener('wheel', () => {
+  //   if (!isScrolling) {
+  //     isScrolling = true;
+  //     console.log("scrolling: "+ `${isScrolling}`);
+  //     if (!isAnimating){
+  //       console.log("animating: "+ `${isAnimating}`);
+  //       gsap.to("#zoom-container", {
+  //         scale: 1.5,   // 容器放大效果
+  //         duration: 0.2,
+  //         ease: "back.out(1)",
+  //         onComplete: () => {
+  //           gsap.to("#zoom-container", {
+  //             scale: 1,   // 回復原本大小
+  //             duration: 0.2,
+  //             ease: "back.out(1)",
+  //             onComplete: () => {
+  //               isScrolling = false;  // 清除滾動狀態
+  //               isAnimating = false;
+  //             }
+  //           });
+  //         }
+  //       });
+  //     }
+  //   }
+  // });
+
+  let isAnimating = false;
+
+  const trigger = ScrollTrigger.create({
+    trigger: "#zoom-container",
+    start: "top top",
+    end: "bottom top",
+    onUpdate: (self) => {
+      if (!isAnimating) {
+        isAnimating = true;
+
+        gsap.to("#zoom-container", {
+          scale: 1.01,
+          duration: 0.5,
+          ease: "circ.out",
+          markers: true,
+          onComplete: () => {
+            gsap.to("#zoom-container", {
+              scale: 1,
+              duration: 0.5,
+              ease: "circ.out",
+              markers: true,
+              onComplete: () => {
+                isAnimating = false;
+              },
+            });
+          },
+        });
+      }
+      // ScrollTrigger.refresh();
+    },
+  });
+
+  // 滾動事件監聽
+  window.addEventListener("wheel", () => {
+    // 滾動時，更新 ScrollTrigger
+    trigger.update();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+.button-container {
+    height: 58px;
+    width: 117px;
+    border-radius: 29px;
+    border: 0px;
+    background-color: #585858;
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .button-container:hover {
+    background-color: black;
+    transition: 0.3s;
+  }
+
+  .button-container:active {
+    color: #ACACAC;
+    transition: 0.1s;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: 'Noto Serif TC', serif;
+  }
+
+  .box {
+    border-bottom: 1px #BBBBBB solid;
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .go-next-web button{
+    font-family: 'Noto Serif TC', serif;
+    height: 5vh;
+    width: 10vw;
+    border-radius: 29px;
+    border: 0px;
+    background-color: #585858;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .go-next-web button:hover{
+    background-color: black;
+    transition: 0.3s;
+  }
+
+  .go-next-web button:active {
+    color: #ACACAC;
+    transition: 0.1s;
+  }
+
+/* menu */
+#menu section{
+  /* display: none; */
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  left: -100%;
+  top: 0;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Noto Serif TC', serif;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+#menu section .all-icon-container{
+  position: fixed;
+  top: 3vh;
+  left: 1.5vw;
+}
+
+#menu section .icon{
+  display: inline-block;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+#menu section .icon-size{
+  width: 3vw;
+}
+
+
+.line-content-box{
+  height: 80%;
+  width: 90%;
+  border-style: none double none double;
+  border-width: 2px;
+  border-color: #000;
+  position: relative;
+}
+
+a {
+  text-decoration:none;
+}
+
+.menu-topic-text{
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: #000;
+}
+
+.menu-topic-text .small-size-text{
+  font-size: 1.5rem;
+}
+
+.menu-option{
+  font-weight: 500;
+  font-size: 2rem;
+  color: #000;
+}
+
+ul li{
+  opacity: 0;
+  list-style: none;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px #CBCBCB solid;
+  transform: translateY(-180%);
+}
+
+.hover-line{
+  /* transform: scaleX(0); */
+  border: 1px #000 solid;
+  transform-origin: left;
+  opacity: 0;
+}
+
+.all-icon-container {
+  position: fixed;
+  top: 3vh;
+  left: 1.5vw;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.icon-size {
+  width: 3vw;
+}
+
+  /*選擇區*/
+  .choice-content {
+    display: none;
+  }
+
+  .choice-box{
+    border: 2px #adadad solid;
+    padding: 3rem;
+    margin-top: 10vh;
+  }
+
+  .choice-title{
+    font-family: 'Noto Serif TC', serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .choices{
+    display: flex;
+    justify-content: center;
+  }
+
+  .eachchoice{
+    width: 20vw;
+    height: 50vh;
+    /*border: 1px #585858 solid;*/
+    margin: auto 15px;
+  }
+
+  .choicepic{
+    width: 300px;
+    height: 300px;
+    border: 2px #585858 solid;
+    margin-bottom: 1.5vh;
+    overflow: hidden;
+  }
+  .choicepic iframe,.choicepic img{
+    height: 300px;
+    width: auto;
+  }
+
+  /*modal*/
+  .modal-body, .modal-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-header{
+    background: #C3DD45;
+  }
+  .modal-body h5{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .modal-title{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .modal-footer{
+    background: #C3DD45;
+  }
+  .pic{
+    width: 300px;
+    height: 300px;
+  }
+
+  .modalbutton{
+    background: #000 !important;
+    border: none !important;
+  }
+
+  .modalbutton:hover{
+    background: #5c5c5c !important;
+  }
