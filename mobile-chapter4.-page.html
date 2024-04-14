@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>第四章</title>
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+      html{
+        font-size:10px;
+      }
+
+      body{
+        margin: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        font-family: 'Noto Serif TC', serif;
+      }
+
+      .kv{
+        /* position: relative; */
+        background-image: url(image/chapter/chapter_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+      }
+
+      .chapter-number{
+        font-weight: bold;
+        font-size: 4rem;
+      }
+
+      .gray-image,
+      .color-image
+      {
+        width: 65%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+      }
+
+      .color-image{
+        /* 章節頁上色圖 */
+        background-image: url(image/chapter/test-color.png);
+
+        -webkit-mask-image: url(image/mask-new0203-35page.png);
+        -webkit-mask-size: cover;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: 0% 0%;
+        mask-image: url(image/mask-new0203-35page.png);
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position: 0% 0%;
+      }
+
+      .mask-animation{
+        animation: addColor;
+        /* step裡的數字要是mask的張數-1 */
+        animation-timing-function: steps(34);
+        animation-duration: 1200ms;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes addColor{
+        0%{
+          -webkit-mask-position: 0% 0%;
+          mask-position: 0% 0%;
+        }
+        100%{
+          -webkit-mask-position: 100% 0%;
+          mask-position: 100% 0%;
+        }
+      }
+
+      .button-container{
+        height: 58px;
+        width: 117px;
+        border-radius: 29px;
+        border: 0px;
+        background-color: #585858;
+        color: white;
+        font-size: 3rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .button-container:hover{
+        background-color: black;
+        transition: 0.3s;
+      }
+
+      .button-container:active{
+        color: #ACACAC;
+        transition: 0.1s;
+      }
+
+      a {
+        text-decoration:none;
+      }
+
+      .box{
+        border-bottom: 1px #BBBBBB solid;
+        width: 100%;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+      }
+
+    </style>
+  </head>
+
+  <body>
+<div id="rotate">
+    <div class="kv d-flex flex-column justify-content-center align-items-center" style="width: 100%; height: 100%;">
+      <!-- 章節頁線稿圖 -->
+      <div class="gray-image" style="background-image: url(image/chapter/test-bk.png)"></div>
+      <div class="color-image mask-animation"></div>
+      <div class="container">
+        <div class="content-width col-3">
+          <div class="text d-flex flex-column justify-content-center align-items-start" style="margin-bottom: 6vh;">
+            <div class="box chapter-number">
+              <p>CHAPTER 04</p>
+            </div>
+            <div class="box chapter-name">
+              <div style="font-size: 2.5rem;">偏執的維納斯</div>
+            </div>
+            <div class="box"></div>
+          </div>
+          <div class="button-layout d-flex justify-content-end align-items-center">
+            <a href="mobile-the-beautiest-in-school.html">
+              <div class="button-container d-flex justify-content-center align-items-center">
+                <div style="font-size: 2.8rem;">翻閱</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./mobile-version/mobile-rotate.js"></script>
+    <script src="./mobile-version/mobile-interact.js"></script>
+
+  </body>
+</html>

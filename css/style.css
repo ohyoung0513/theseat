@@ -1,3 +1,6 @@
+html {
+  font-size: 10px;
+}
 .button-container {
     height: 58px;
     width: 117px;
@@ -41,7 +44,7 @@
     border: 0px;
     background-color: #585858;
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
     margin-top: 5vh;
@@ -67,7 +70,7 @@
   margin: 0;
   left: -100%;
   top: 0;
-  position: absolute;
+  position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
   font-family: 'Noto Serif TC', serif;
