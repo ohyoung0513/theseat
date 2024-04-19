@@ -1,68 +1,69 @@
 html {
   font-size: 10px;
 }
+
 .button-container {
-    height: 58px;
-    width: 117px;
-    border-radius: 29px;
-    border: 0px;
-    background-color: #585858;
-    color: white;
-    font-size: 3rem;
-    font-weight: 500;
-    cursor: pointer;
-  }
+  height: 58px;
+  width: 117px;
+  border-radius: 29px;
+  border: 0px;
+  background-color: #585858;
+  color: white;
+  font-size: 3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
 
-  .button-container:hover {
-    background-color: black;
-    transition: 0.3s;
-  }
+.button-container:hover {
+  background-color: black;
+  transition: 0.3s;
+}
 
-  .button-container:active {
-    color: #ACACAC;
-    transition: 0.1s;
-  }
+.button-container:active {
+  color: #ACACAC;
+  transition: 0.1s;
+}
 
-  a {
-    text-decoration: none;
-    font-family: 'Noto Serif TC', serif;
-  }
+a {
+  text-decoration: none;
+  font-family: 'Noto Serif TC', serif;
+}
 
-  .box {
-    border-bottom: 1px #BBBBBB solid;
-    width: 100%;
-    height: 7vh;
-    display: flex;
-    align-items: center;
-  }
+.box {
+  border-bottom: 1px #BBBBBB solid;
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+}
 
-  .go-next-web button{
-    font-family: 'Noto Serif TC', serif;
-    height: 5vh;
-    width: 10vw;
-    border-radius: 29px;
-    border: 0px;
-    background-color: #585858;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
+.go-next-web button {
+  font-family: 'Noto Serif TC', serif;
+  height: 5vh;
+  width: 10vw;
+  border-radius: 29px;
+  border: 0px;
+  background-color: #585858;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
 
-  .go-next-web button:hover{
-    background-color: black;
-    transition: 0.3s;
-  }
+.go-next-web button:hover {
+  background-color: black;
+  transition: 0.3s;
+}
 
-  .go-next-web button:active {
-    color: #ACACAC;
-    transition: 0.1s;
-  }
+.go-next-web button:active {
+  color: #ACACAC;
+  transition: 0.1s;
+}
 
 /* menu */
-#menu section{
+#menu section {
   /* display: none; */
   visibility: hidden;
   width: 100vw;
@@ -78,24 +79,24 @@ html {
   transition: all 0.5s ease;
 }
 
-#menu section .all-icon-container{
+#menu section .all-icon-container {
   position: fixed;
   top: 3vh;
   left: 1.5vw;
 }
 
-#menu section .icon{
+#menu section .icon {
   display: inline-block;
   margin-right: 2px;
   cursor: pointer;
 }
 
-#menu section .icon-size{
+#menu section .icon-size {
   width: 3vw;
 }
 
 
-.line-content-box{
+.line-content-box {
   height: 80%;
   width: 90%;
   border-style: none double none double;
@@ -105,26 +106,26 @@ html {
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
 }
 
-.menu-topic-text{
+.menu-topic-text {
   font-weight: 700;
   font-size: 3.2rem;
   color: #000;
 }
 
-.menu-topic-text .small-size-text{
+.menu-topic-text .small-size-text {
   font-size: 1.5rem;
 }
 
-.menu-option{
+.menu-option {
   font-weight: 500;
   font-size: 2rem;
   color: #000;
 }
 
-ul li{
+ul li {
   opacity: 0;
   list-style: none;
   height: 9vh;
@@ -134,7 +135,7 @@ ul li{
   transform: translateY(-180%);
 }
 
-.hover-line{
+.hover-line {
   /* transform: scaleX(0); */
   border: 1px #000 solid;
   transform-origin: left;
@@ -157,78 +158,149 @@ ul li{
   width: 3vw;
 }
 
-  /*選擇區*/
-  .choice-content {
-    display: none;
-  }
+/*選擇區*/
+.choice-content {
+  display: none;
+}
 
-  .choice-box{
-    border: 2px #adadad solid;
-    padding: 3rem;
-    margin-top: 10vh;
-  }
+.choice-box {
+  border: 2px #adadad solid;
+  padding: 3rem;
+  margin-top: 10vh;
+}
 
-  .choice-title{
-    font-family: 'Noto Serif TC', serif;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-  }
+.choice-title {
+  font-family: 'Noto Serif TC', serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
 
-  .choices{
-    display: flex;
-    justify-content: center;
-  }
+.choices {
+  display: flex;
+  justify-content: center;
+}
 
-  .eachchoice{
-    width: 20vw;
-    height: 50vh;
-    /*border: 1px #585858 solid;*/
-    margin: auto 15px;
-  }
+.eachchoice {
+  width: 20vw;
+  height: 50vh;
+  /*border: 1px #585858 solid;*/
+  margin: auto 15px;
+}
 
-  .choicepic{
-    width: 300px;
-    height: 300px;
-    border: 2px #585858 solid;
-    margin-bottom: 1.5vh;
-    overflow: hidden;
-  }
-  .choicepic iframe,.choicepic img{
-    height: 300px;
-    width: auto;
-  }
+.choicepic {
+  width: 300px;
+  height: 300px;
+  border: 2px #585858 solid;
+  margin-bottom: 1.5vh;
+  overflow: hidden;
+}
 
-  /*modal*/
-  .modal-body, .modal-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .modal-header{
-    background: #C3DD45;
-  }
-  .modal-body h5{
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .modal-title{
-    font-size: 30px;
-    font-weight: bold;
-  }
-  .modal-footer{
-    background: #C3DD45;
-  }
-  .pic{
-    width: 300px;
-    height: 300px;
-  }
+.choicepic iframe,
+.choicepic img {
+  height: 300px;
+  width: auto;
+}
 
-  .modalbutton{
-    background: #000 !important;
-    border: none !important;
-  }
+/*modal*/
+.modal-body,
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .modalbutton:hover{
-    background: #5c5c5c !important;
-  }
+.modal-header {
+  background: #C3DD45;
+}
+
+.modal-body h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.modal-footer {
+  background: #C3DD45;
+}
+
+.pic {
+  width: 300px;
+  height: 300px;
+}
+
+.modalbutton {
+  background: #000 !important;
+  border: none !important;
+}
+
+.modalbutton:hover {
+  background: #5c5c5c !important;
+}
+
+/*add*/
+.add-box {
+  border: 2px #adadad solid;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  background-color: white;
+}
+
+.add {
+  text-align: center;
+  letter-spacing: 0.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.add-btn:hover {
+  background-color: #6c6c6c;
+  color: white;
+  transition: 0.3s;
+}
+
+.add-btn:focus {
+  background-color: #C3DD45;
+  color: #313131;
+  transition: 0.3s;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  font-size: 2.2rem;
+  letter-spacing: 0.2rem;
+  line-height: 3.2rem;
+}
+
+.student p,
+.teacher p,
+.parents p {
+  font-size: medium;
+  line-height: 3rem;
+  margin-top: 2vh;
+  letter-spacing: 0.2rem;
+}
+
+.add h1 {
+  font-family: 'Noto Serif TC', serif;
+}
+
+h5 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2rem;
+}
