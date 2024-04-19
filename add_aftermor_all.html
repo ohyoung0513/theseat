@@ -13,6 +13,7 @@
             box-sizing: border-box;
             font-family: 'Noto Serif TC', serif;
         }
+
         .add-btn {
             font-family: 'Noto Serif TC', serif;
             font-size: large;
@@ -24,6 +25,68 @@
             margin: 0px 10px 0px 10px;
             border-radius: 10px 10px 0 0;
             border: transparent;
+        }
+
+        .add-box {
+            border: 2px #adadad solid;
+            border-radius: 0.5rem;
+            padding: 3rem;
+            background-color: white;
+        }
+
+        .add {
+            text-align: center;
+            letter-spacing: 0.2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-btn:hover {
+            background-color: #6c6c6c;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .add-btn:focus {
+            background-color: #C3DD45;
+            color: #313131;
+            transition: 0.3s;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .content h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+            font-size: 2.2rem;
+            letter-spacing: 0.2rem;
+            line-height: 3.2rem;
+        }
+
+        .student p,
+        .teacher p,
+        .parents p {
+            font-size: medium;
+            line-height: 3rem;
+            margin-top: 2vh;
+            letter-spacing: 0.2rem;
+        }
+
+        .add h1 {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        h5 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.2rem;
         }
     </style>
 </head>
@@ -83,14 +146,17 @@
                         <h3>我班上的孩子怎麼會從歧視轉變成霸凌？<br>霸凌之所以發生，源自人與人間看世界的角度不同</h3>
                         <p>今（2023）年發生在某高中園遊會的事件，就是一例。該校一攤位學生以趣味性為出發點，取「烯環鈉」為攤名，並在網路上宣傳。沒想到這個音似「死番仔」的創意沒被讚賞，還遭指歧視原住民，反對聲浪從校內蔓延到新聞上。
                             當中有學生疑似懷疑校內原民生對外爆料，才引發大量輿論撻伐。氣憤之下，他們用社群軟體成立對話群組，加入原民生並言語攻擊他們。最後校方接到霸凌通報，組織防制校園霸凌因應小組調查始末。
-                            本該是大家同樂的活動，卻以嚴肅的霸凌調查收尾。事情之所以這樣演進，<strong style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">起因於大眾心中對原住民的負面刻板印象，衍生出相對應的、無心的「微歧視」行為。沒及時剎車的微歧視，再轉變成有惡意的歧視和霸凌。</strong>
+                            本該是大家同樂的活動，卻以嚴肅的霸凌調查收尾。事情之所以這樣演進，<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">起因於大眾心中對原住民的負面刻板印象，衍生出相對應的、無心的「微歧視」行為。沒及時剎車的微歧視，再轉變成有惡意的歧視和霸凌。</strong>
                         </p>
                     </div>
                 </div>
                 <div class="content d-flex justify-content-center mt-3">
                     <div class="col-7 px-5">
                         <h3>微歧視與霸凌的關係</h3>
-                        <p><a href="https://www.children.org.tw/publication_research/research_report/2494">2022臺灣兒少微歧視現象與校園霸凌調查報告</a>顯示，有將近九成的兒少曾遇過班上的同學被嘲笑或是排擠，也有32.1%的兒少具微歧視的想法。因此，<strong style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">要阻止霸凌的發生，在事件早期的「微歧視」、嘲笑發生時就應介入，讓事件止步，避免傷害擴大演變成霸凌。</strong>
+                        <p><a
+                                href="https://www.children.org.tw/publication_research/research_report/2494">2022臺灣兒少微歧視現象與校園霸凌調查報告</a>顯示，有將近九成的兒少曾遇過班上的同學被嘲笑或是排擠，也有32.1%的兒少具微歧視的想法。因此，<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">要阻止霸凌的發生，在事件早期的「微歧視」、嘲笑發生時就應介入，讓事件止步，避免傷害擴大演變成霸凌。</strong>
                         </p>
                     </div>
                     <div class="col-4">
@@ -103,7 +169,8 @@
                     </div>
                     <div class="col-7 px-5">
                         <h3>營造友善環境，歧視發生時機會教育</h3>
-                        <p>台灣性別平等教育協會理事翁麗淑也是新北市鷺江國小教師，她說「性別」是學校最常見的歧視類別。從她的經驗來看，<strong style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">在歧視發生時教性別議題，孩子更易理解。</strong>班上曾有學生嘲笑陰柔男孩，翁麗淑及時用課堂，分享葉永鋕被霸凌的故事，和歌手蔡依林唱〈玫瑰少年〉的由來，讓孩子知道「大家都想活出自己的樣子，但這對他們來說很困難」，進而同理不一樣的同學。
+                        <p>台灣性別平等教育協會理事翁麗淑也是新北市鷺江國小教師，她說「性別」是學校最常見的歧視類別。從她的經驗來看，<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">在歧視發生時教性別議題，孩子更易理解。</strong>班上曾有學生嘲笑陰柔男孩，翁麗淑及時用課堂，分享葉永鋕被霸凌的故事，和歌手蔡依林唱〈玫瑰少年〉的由來，讓孩子知道「大家都想活出自己的樣子，但這對他們來說很困難」，進而同理不一樣的同學。
                         </p>
                     </div>
                 </div>
@@ -117,7 +184,8 @@
                         <h3>教導孩子避免歧視：爸媽多陪伴，當孩子閱聽守門員</h3>
                         <p>長期關注媒體識讀議題的《天下雜誌》編輯顧問黃哲斌也是兩個中學男生的爸爸，他主張營造身歷其境的空間，讓孩子「感同身受」，明白自己在網路上歧視人，即便是匿名留言，也會對他人帶來傷害。
                             描述相關議題的戲劇、電影，都能達到身歷其境功效，「像我們家很常看電影，但兒子都只挑英雄片，我就要求：我先陪你看一部，然後你陪我看一部，」他分享自家做法。
-                            此外，家長也能透過更多的認識，在數位變化極快的現在，了解兒少最常使用哪些網站或軟體，及如何使用。「不能因水很危險，就不讓孩子下水，」他認為網路時代的教養亦然，<strong style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">不能因危險，就不給孩子3C，而是讓他們用，但教他們如何善用、不要誤用，且在必要時當他們的救生員</strong>。
+                            此外，家長也能透過更多的認識，在數位變化極快的現在，了解兒少最常使用哪些網站或軟體，及如何使用。「不能因水很危險，就不讓孩子下水，」他認為網路時代的教養亦然，<strong
+                                style="color: #de3a3a; box-shadow: 0 1px;padding-bottom:3px;">不能因危險，就不給孩子3C，而是讓他們用，但教他們如何善用、不要誤用，且在必要時當他們的救生員</strong>。
                         </p>
                     </div>
                 </div>
