@@ -152,7 +152,7 @@
 
 <body>
     <div class="desktop-only">
-        <audio id="audio" src="bgm/maou_bgm_piano37.mp3" loop></audio>
+        <audio id="audio" src="bgm/maou_bgm_piano37.mp3" loop autoplay></audio>
         <header>
             <div class="all-icon-container">
                 <div class="burger icon" id="open-menu-button">
@@ -278,7 +278,7 @@
 
     <div class="mobile-only">
         <div id="rotate">
-            <audio id="audio" src="bgm/maou_bgm_piano37.mp3" loop></audio>
+            <audio id="audio" src="bgm/maou_bgm_piano37.mp3" loop autoplay></audio>
             <header>
                 <div class="all-icon-container">
                     <div class="burger icon" id="open-menu-button">
@@ -418,7 +418,6 @@
         closeMenu();
         // 點擊音效開關按鈕時切換音效狀態
         document.getElementById('audioToggle').addEventListener('click', toggleAudio);
-        window.onload = toggleAudio;
 
         // button animation
         function playButtonAnimation() {
