@@ -70,15 +70,19 @@
         }
 
         .add-btn {
+            justify-content: center;
+            align-items: center;
             font-size: large;
             letter-spacing: 0.2rem;
-            height: 50px;
+            height: 20vh;
             background: #313131;
             color: white;
             font-weight: bold;
             margin-bottom: 1vh;
             border-radius: 1rem 0 0 1rem;
             border: transparent;
+            -webkit-writing-mode: vertical-lr;
+            writing-mode: vertical-lr;
         }
 
         .add-btn:hover {
@@ -123,6 +127,8 @@
             font-size: 2.2rem;
             letter-spacing: 0.2rem;
             line-height: 3.2rem;
+            /* mobile version */
+            margin-top: 1vh;
         }
 
         .student p,
@@ -142,10 +148,12 @@
             letter-spacing: 0.2rem;
         }
 
+        /* mobile version */
         .content .button{
             display: flex;
-            margin-top: 6vh;
-            width: 10vw;
+            margin-top: 4vh;
+            margin-bottom: 2vh;
+            width: 15vw;
             height: 40px;
             border-radius: 20px;
             border: 0px;
@@ -205,14 +213,14 @@
         <div class="row all-content-position">
             <div class="col-md-1 col-1 flex-column position-fixed">
                 <div class="row w-100">
-                    <button autofocus class="w-100 add-btn" onclick="makeChoice3(1)">給學生</button>
-                    <button class="w-100 add-btn" onclick="makeChoice3(2)">給教師</button>
-                    <button class="w-100 add-btn" onclick="makeChoice3(3)">給家長</button>
+                    <button autofocus class="add-btn" onclick="makeChoice3(1)">給學生</button>
+                    <button class="add-btn" onclick="makeChoice3(2)">給教師</button>
+                    <button class="add-btn" onclick="makeChoice3(3)">給家長</button>
                 </div>
             </div>
             <div class="col-md-1 col-1 layout-for-label"></div>
 
-            <div class="col-md-11 flex-column">
+            <div class="col-md-11 col-11 flex-column">
                 <div class="row">
                     <div class="student col-12 add-box">
                         <div class="content d-flex mt-3 flex-column">
