@@ -215,17 +215,23 @@ ul li {
 }
 
 .modal-body h5 {
-  font-size: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.modal-body h6 {
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .modal-title {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .modal-footer {
-  background: #C3DD45;
+  background: #ffffff;
+  height: 10vh;
 }
 
 .pic {
@@ -236,6 +242,11 @@ ul li {
 .modalbutton {
   background: #000 !important;
   border: none !important;
+  height: 5vh;
+  width: 8vw;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: monospace;
 }
 
 .modalbutton:hover {
