@@ -88,6 +88,12 @@
             align-items: center;
             letter-spacing: 0.2rem;
         }
+
+        .active-btn {
+            background-color: #C3DD45;
+            color: #313131;
+            transition: 0.3s;
+        }
     </style>
 </head>
 
@@ -229,6 +235,31 @@
                 });
             }
         }
+
+        //button color
+        function changeButtonColor() {
+            const btns = document.querySelectorAll(".add-btn");
+
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btns.forEach(btn => {
+                        btn.classList.remove('active-btn');
+                    });
+                    // 為目前點擊的按鈕新增class
+                    btn.classList.add('active-btn');
+                    // 呼叫對應的函數（這裡假設您有一個名為 makeChoice3 的函數）
+                    // 傳遞給函數的參數是目前按鈕的索引加1（因為按鈕的索引從0開始，而您的函數是從1開始）
+                    makeChoice3(Array.from(btns).indexOf(btn) + 1);
+                });
+            });
+
+            //自動觸發第一個按鈕被點擊
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector(".add-btn").click();
+            });
+        }
+
+        changeButtonColor();
     </script>
 
 </body>
