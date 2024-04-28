@@ -1,234 +1,356 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>關於我們</title>
 
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="image/webicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="image/webicon.ico" type="image/x-icon" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>關於我們</title>
 
-    <style>
-      html{
-        font-size:10px;
-      }
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="image/webicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="image/webicon.ico" type="image/x-icon" />
 
-      body{
-        margin: 0;
-        box-sizing: border-box;
-        height: 100vh;
-        width: 100vw;
-        /* overflow: hidden; */
-        overflow-x: hidden;
-        font-family: 'Noto Serif TC', serif;
-      }
+  <style>
+    html {
+      font-size: 10px;
+    }
 
-      .bg{
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-        background-image: url(image/all-need-to-use/allchapters_bg.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        position: fixed;
-        z-index: -100;
-      }
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      height: 100vh;
+      width: 100vw;
+      /* overflow: hidden; */
+      overflow-x: hidden;
+      font-family: 'Noto Serif TC', serif;
+    }
 
-      header{
-        margin-top: 4vh;
-      }
+    .bg {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/allchapters_bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
 
-      .main-topic-text{
-        font-weight: 700;
-        font-size: 3.2rem;
-        color: #000;
-      }
+    header {
+      margin-top: 4vh;
+    }
 
-      .main-topic-text .small-size-text{
-        font-size: 1.5rem;
-        color: #000;
-      }
+    .main-topic-text {
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: #000;
+    }
 
-      .box{
-        border-bottom: 1px #BBBBBB solid;
-        height: 7vh;
-        display: flex;
-        align-items: center;
-      }
+    .main-topic-text .small-size-text {
+      font-size: 1.5rem;
+      color: #000;
+    }
 
-      .card-container{
-        margin-top: 3%;
-      }
+    .box {
+      border-bottom: 1px #BBBBBB solid;
+      height: 7vh;
+      display: flex;
+      align-items: center;
+    }
 
-      .personal-card{
-        border: solid 1px black;
-        background-color: white;
-        box-shadow: 8px 8px 3px #BFBFBF;
-        width: 100%;
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-      }
+    .card-container {
+      margin-top: 3%;
+    }
 
-      .card-hole img{
-        position: absolute;
-        top: 3%;
-        left: 4%;
-        width: 5%;
-        height: auto;
-      }
+    .personal-card {
+      border: solid 1px black;
+      background-color: white;
+      box-shadow: 8px 8px 3px #BFBFBF;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-      .personal-card .pic{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 4%;
-      }
+    .card-hole img {
+      position: absolute;
+      top: 3%;
+      left: 4%;
+      width: 5%;
+      height: auto;
+    }
 
-      .personal-card .pic img{
-        width: 70%;
-        height: auto;
-        border-radius: 50%;
-      }
+    .personal-card .pic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 4%;
+    }
 
-      .personal-card .name,
-      .work,
-      .detail-work{
-        font-size: 2rem;
-        color: #474747;
-      }
+    .personal-card .pic img {
+      width: 70%;
+      height: auto;
+      border-radius: 50%;
+    }
 
-      .button-text{
-        font-size: 2rem;
-        font-weight: 500;
-        color: white;
-      }
+    .personal-card .name,
+    .work,
+    .detail-work {
+      font-size: 2rem;
+      color: #474747;
+    }
 
-      .personal-card .name{
-        color: #000;
-        font-weight: 700;
-      }
+    .button-text {
+      font-size: 2rem;
+      font-weight: 500;
+      color: white;
+    }
 
-      .detail-work{
-        font-size: 1.5rem;
-      }
+    .personal-card .name {
+      color: #000;
+      font-weight: 700;
+    }
 
-      .button{
-        display: flex;
-        padding: 0 1vw;
-        height: 40px;
-        border-radius: 20px;
-        border: 0px;
-        background-color: #585858;
-        color: white;
-        cursor: pointer;
-      }
+    .detail-work {
+      font-size: 1.5rem;
+    }
 
-      .button:hover{
-        background-color: black;
-        transition: 0.3s;
-      }
+    .button {
+      display: flex;
+      padding: 0 1vw;
+      height: 40px;
+      border-radius: 20px;
+      border: 0px;
+      background-color: #585858;
+      color: white;
+      cursor: pointer;
+    }
 
-      .button:active{
-        color: #ACACAC;
-        transition: 0.1s;
-      }
+    .button:hover {
+      background-color: black;
+      transition: 0.3s;
+    }
 
-      .account{
-        margin-top: 4%;
-      }
+    .button:active {
+      color: #ACACAC;
+      transition: 0.1s;
+    }
 
-      a {
-        text-decoration:none;
-      }
+    .account {
+      margin-top: 4%;
+    }
 
-    </style>
-  </head>
+    a {
+      text-decoration: none;
+    }
 
-  <body>
-    <div class="bg"></div>
-    <div class="all-page-container d-flex flex-column justify-content-center">
-      <div class="container">
-        <header>
-          <div class="main-topic">
-            <div class="main-topic-text box">
-              <p>關於我們 <span class="small-size-text">About Us</span></p>
-            </div>
-          </div>
-        </header>
+    /*menu*/
+    #menu section .menu-bg {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/menu-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="audio" src="bgm/maou_bgm_piano37.mp3" loop></audio>
+  <header>
+    <div class="all-icon-container">
+      <div class="burger icon" id="open-menu-button">
+        <div class="icon-size">
+          <img src="image/home/buger_icon.png" class="w-100">
+        </div>
       </div>
-      <div class="container card-container">
-        <div class="row g-6 row-cols-md-3 row-cols-1">
-          <div class="col">
-            <div class="personal-card">
-              <div class="card-hole"><img src="image/all-need-to-use/card-hole.png"></div>
-              <div class="pic"><img src="image/all-need-to-use/dada.png"></div>
-              <div class="name">賴奕樺</div>
-              <div class="work">互動設計師、程式設計師</div>
-              <div class="detail-work">
-                互動程式設計、網頁前端程式
-              </div>
-              <div class="account">
-                <a href="https://www.instagram.com/sunmaa612/">
-                  <div class="button d-flex justify-content-center align-items-center">
+      <div class="sound icon">
+        <div class="icon-size">
+          <img id="audioToggle" src="image/home/sound_icon_2.png" class="w-100">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg"></div>
+  <div class="all-page-container d-flex flex-column justify-content-center">
+    <div class="container">
+      <header>
+        <div class="main-topic">
+          <div class="main-topic-text box">
+            <p>關於我們 <span class="small-size-text">About Us</span></p>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="container card-container">
+      <div class="row g-6 row-cols-md-3 row-cols-1">
+        <div class="col">
+          <div class="personal-card">
+            <div class="card-hole"><img src="image/all-need-to-use/card-hole.png"></div>
+            <div class="pic"><img src="image/all-need-to-use/dada.png"></div>
+            <div class="name">賴奕樺</div>
+            <div class="work">互動設計師、程式設計師</div>
+            <div class="detail-work">
+              互動程式設計、網頁前端程式
+            </div>
+            <div class="account">
+              <a href="https://www.instagram.com/sunmaa612/">
+                <div class="button d-flex justify-content-center align-items-center">
                   <div class="button-text">前往個人帳號</div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
           </div>
-          <div class="col">
-            <div class="personal-card">
-              <div class="card-hole"><img src="image/all-need-to-use/card-hole.png"></div>
-              <div class="pic"><img src="image/all-need-to-use/ohYoung.png"></div>
-              <div class="name">歐陽蓁</div>
-              <div class="work">介面設計師、程式設計師</div>
-              <div class="detail-work">介面設計、網站整合與發佈</div>
-              <div class="account">
-                <a href="https://linktr.ee/su.bunai">
-                  <div class="button d-flex justify-content-center align-items-center">
+        </div>
+        <div class="col">
+          <div class="personal-card">
+            <div class="card-hole"><img src="image/all-need-to-use/card-hole.png"></div>
+            <div class="pic"><img src="image/all-need-to-use/ohYoung.png"></div>
+            <div class="name">歐陽蓁</div>
+            <div class="work">介面設計師、程式設計師</div>
+            <div class="detail-work">介面設計、網站整合與發佈</div>
+            <div class="account">
+              <a href="https://linktr.ee/su.bunai">
+                <div class="button d-flex justify-content-center align-items-center">
                   <div class="button-text">前往個人帳號</div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
           </div>
-          <div class="col">
-            <div class="personal-card">
-              <div class="card-hole"><img src="image/all-need-to-use/card-hole.png"></div>
-              <div class="pic"><img src="image/all-need-to-use/milk.png"></div>
-              <div class="name">廖彩琁</div>
-              <div class="work">2D視覺設計師</div>
-              <div class="detail-work">
-                分鏡設計、原稿繪製與上色
-              </div>
-              <div class="account">
-                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fellie5756_milky%3Ffbclid%3DIwAR3wzi_a-VMDqCBAuQCmGxrSqCK2NESMspXsy3kQQxcQNwy2wn-H4Cob92Q_aem_AVueid4q_S7eeW8Kwl-exiD2nZrb9V6nA4__SP3SkR79E55xtzCyrsA-QtJdfKKDgoh9YKKCR_IhST93A2emNS7e&h=AT3zEqtabvQqpFaneEEUGImw-fexaxBiI9wRTqm-5_EfiHX7ZI5B6COyGdXopJRaicAmEz1bjUMydN4ZxjKZLg_yLg_7UyKWqC6Kvh8Ir8Qn54ObE-nuUf9_DLYfM4csaQJK">
-                  <div class="button d-flex justify-content-center align-items-center">
+        </div>
+        <div class="col">
+          <div class="personal-card">
+            <div class="card-hole"><img src="image/all-need-to-use/card-hole.png"></div>
+            <div class="pic"><img src="image/all-need-to-use/milk.png"></div>
+            <div class="name">廖彩琁</div>
+            <div class="work">2D視覺設計師</div>
+            <div class="detail-work">
+              分鏡設計、原稿繪製與上色
+            </div>
+            <div class="account">
+              <a
+                href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fellie5756_milky%3Ffbclid%3DIwAR3wzi_a-VMDqCBAuQCmGxrSqCK2NESMspXsy3kQQxcQNwy2wn-H4Cob92Q_aem_AVueid4q_S7eeW8Kwl-exiD2nZrb9V6nA4__SP3SkR79E55xtzCyrsA-QtJdfKKDgoh9YKKCR_IhST93A2emNS7e&h=AT3zEqtabvQqpFaneEEUGImw-fexaxBiI9wRTqm-5_EfiHX7ZI5B6COyGdXopJRaicAmEz1bjUMydN4ZxjKZLg_yLg_7UyKWqC6Kvh8Ir8Qn54ObE-nuUf9_DLYfM4csaQJK">
+                <div class="button d-flex justify-content-center align-items-center">
                   <div class="button-text">前往個人帳號</div>
-                  </div>
-                </a>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div id="menu">
+    <section>
+      <div class="menu-bg"></div>
+      <div class="all-icon-container">
+        <div class="close icon" id="close-menu-button">
+          <div class="icon-size">
+            <img src="image/all-need-to-use/burger-close-icon.png" class="w-100">
+          </div>
+        </div>
+      </div>
+      <div class="container d-flex">
+        <div class="col-12">
+          <div class="content-container d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="line-content-box">
+              <div class="note-layout" style="width: 100%;">
+                <div class="note-date-image d-flex justify-content-end">
+                  <img src="image/all-need-to-use/note-date.png" style="width: 10vw; padding-right: 20px;">
+                </div>
+              </div>
+              <ul style="padding: 0 1.8vw;">
+                <li>
+                  <span class="menu-topic-text">目錄<span class="small-size-text">MENU</span></span>
+                </li>
+                <li>
+                  <a href="chapter-list-page.html">
+                    <div class="menu-option">
+                      劇情章節.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="message-page.html">
+                    <div class="menu-option">
+                      我有話要說.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="an-ti-bullying-information.html">
+                    <div class="menu-option">
+                      反霸凌資訊.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="reference.html">
+                    <div class="menu-option">
+                      引用資料.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="menu-option">
+                      關於我們.
+                      <div class="hover-line"></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div class="border"></div>
+                </li>
+                <li>
+                  <div class="border"></div>
+                </li>
+              </ul>
+              <div class="pen-layout position-absolute" style="bottom: -50px; right: -100px; width: 25vw;">
+                <div class="pen-image">
+                  <img src="image/all-need-to-use/menu-pen.png" style="width: 100%;">
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        
       </div>
-    </div>
+    </section>
+  </div>
 
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!--menu need-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!--menu need-->
+  <script src="js/menu.js"></script> <!--menu need-->
 
-    
-  </body>
+  <script>
+    openMenu();
+    closeMenu();
+    // 點擊音效開關按鈕時切換音效狀態
+    document.getElementById('audioToggle').addEventListener('click', toggleAudio);
+  </script>
+
+</body>
+
 </html>
