@@ -13,12 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="image/webicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="image/webicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style_mobile.css">
+
 
   <style>
-    html {
-      font-size: 10px;
-    }
-
     body {
       margin: 0;
       box-sizing: border-box;
@@ -95,7 +93,7 @@
 
     .card-content .chapter-name,
     .button-text {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
     }
 
@@ -119,14 +117,45 @@
       cursor: pointer;
     }
 
+    butt
+
     a {
       text-decoration: none;
+    }
+
+    /*menu*/
+    #menu section .menu-bg {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/menu-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
     }
   </style>
 </head>
 
 <body>
   <div id="rotate">
+    <audio id="audio" src="bgm/maou_bgm_piano37.mp3" loop></audio>
+    <header>
+      <div class="all-icon-container">
+        <div class="burger icon" id="open-menu-button">
+          <div class="icon-size">
+            <img src="image/home/buger_icon.png" class="w-100">
+          </div>
+        </div>
+        <div class="sound icon">
+          <div class="icon-size">
+            <img id="audioToggle" src="image/home/sound_icon_2.png" class="w-100">
+          </div>
+        </div>
+      </div>
+    </header>
+
     <div class="chapter-list-page-bg"></div>
     <div class="container d-flex flex-column" style="height: 100vh;">
       <div class="col-12">
@@ -147,7 +176,7 @@
                 </div>
                 <div class="card-text-container d-flex flex-column" style="width: 100%; margin-top: 2%;">
                   <div class="chapter-name">前導劇情</div>
-                  <div class="button-container d-flex justify-content-end">
+                  <div class="d-flex justify-content-end">
                     <a href="mobile-video.html">
                       <div class="button d-flex justify-content-center align-items-center">
                         <div class="button-text">前往</div>
@@ -166,7 +195,7 @@
                 </div>
                 <div class="card-text-container d-flex flex-column" style="width: 100%; margin-top: 2%;">
                   <div class="chapter-name">CHAPTER 01</div>
-                  <div class="button-container d-flex justify-content-end">
+                  <div class="d-flex justify-content-end">
                     <a href="mobile-morning-ing.html">
                       <div class="button d-flex justify-content-center align-items-center">
                         <div class="button-text">前往</div>
@@ -185,7 +214,7 @@
                 </div>
                 <div class="card-text-container d-flex flex-column" style="width: 100%; margin-top: 2%;">
                   <div class="chapter-name">CHAPTER 02</div>
-                  <div class="button-container d-flex justify-content-end">
+                  <div class="d-flex justify-content-end">
                     <a href="mobile-after-morning-ing.html">
                       <div class="button d-flex justify-content-center align-items-center">
                         <div class="button-text">前往</div>
@@ -204,7 +233,7 @@
                 </div>
                 <div class="card-text-container d-flex flex-column" style="width: 100%; margin-top: 2%;">
                   <div class="chapter-name">CHAPTER 03</div>
-                  <div class="button-container d-flex justify-content-end">
+                  <div class="d-flex justify-content-end">
                     <a href="mobile-before-cockroach.html">
                       <div class="button d-flex justify-content-center align-items-center">
                         <div class="button-text">前往</div>
@@ -223,7 +252,7 @@
                 </div>
                 <div class="card-text-container d-flex flex-column" style="width: 100%; margin-top: 2%;">
                   <div class="chapter-name">CHAPTER 04</div>
-                  <div class="button-container d-flex justify-content-end">
+                  <div class="d-flex justify-content-end">
                     <a href="mobile-the-beautiest-in-school.html">
                       <div class="button d-flex justify-content-center align-items-center">
                         <div class="button-text">前往</div>
@@ -237,21 +266,112 @@
         </div>
       </div>
     </div>
-
+    <div id="menu">
+      <section>
+        <div class="menu-bg"></div>
+        <div class="all-icon-container">
+          <div class="close icon" id="close-menu-button">
+            <div class="icon-size">
+              <img src="image/all-need-to-use/burger-close-icon.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="container d-flex">
+          <div class="col-12">
+            <div class="content-container d-flex justify-content-center align-items-center" style="height: 100vh;">
+              <div class="line-content-box">
+                <div class="note-layout" style="width: 100%;">
+                  <div class="note-date-image d-flex justify-content-end">
+                    <img src="image/all-need-to-use/note-date.png" style="width: 10vw; padding-right: 20px;">
+                  </div>
+                </div>
+                <ul style="padding: 0 1.8vw;">
+                  <li>
+                    <span class="menu-topic-text">目錄<span class="small-size-text">MENU</span></span>
+                  </li>
+                  <li>
+                    <a href="index.html">
+                      <div class="menu-option">
+                        首頁.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-chapter-list-page.html">
+                      <div class="menu-option">
+                        劇情章節.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-message-page.html">
+                      <div class="menu-option">
+                        我有話要說.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-an-ti-bullying-information.html">
+                      <div class="menu-option">
+                        反霸凌資訊.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-reference.html">
+                      <div class="menu-option">
+                        引用資料.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-about-us.html">
+                      <div class="menu-option">
+                        關於我們.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="border"></div>
+                  </li>
+                </ul>
+                <div class="pen-layout position-absolute" style="bottom: -50px; right: -100px; width: 25vw;">
+                  <div class="pen-image">
+                    <img src="image/all-need-to-use/menu-pen.png" style="width: 100%;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 
 
 
 
   <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!--menu need-->
+  <script src="js/menu.js"></script>
   <script src="./mobile-version/mobile-rotate.js"></script>
   <script src="./mobile-version/mobile-interact.js"></script>
 
   <script>
-
+    openMenu();
+    closeMenu();
+    // 點擊音效開關按鈕時切換音效狀態
+    document.getElementById('audioToggle').addEventListener('click', toggleAudio);
   </script>
 
 

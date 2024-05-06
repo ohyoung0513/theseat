@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,31 +18,32 @@
     /* overflow-x: hidden; */
   }
 
-  .people-look{
+  .people-look {
     width: 100vw;
     /* height: 50vh; */
   }
 
-  .pic-look{
-    height: 25vh;/*跟flexbox-look一樣高*/
+  .pic-look {
+    height: 25vh;
+    /*跟flexbox-look一樣高*/
     object-fit: contain;
   }
 
-  .flexbox-look{
+  .flexbox-look {
     position: relative;
     margin-top: 5vh;
     height: 25vh;
     display: flex;
-    justify-content: space-around;    
+    justify-content: space-around;
   }
 
-  .enter-after-morning{
+  .enter-after-morning {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 5%;
   }
 
-  .enter-after-morning button{
+  .enter-after-morning button {
     height: 5vh;
     width: 10vw;
     border: 2px solid black;
@@ -49,7 +51,7 @@
     cursor: pointer;
   }
 
-  .comic-bg{
+  .comic-bg {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -61,10 +63,37 @@
     z-index: -100;
   }
 
+  /*menu*/
+  #menu section .menu-bg {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(image/all-need-to-use/menu-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    z-index: -100;
+  }
 </style>
 
 <body>
-  <div id= 'rotate'>
+  <div id='rotate'>
+    <audio id="audio" src="bgm/maou_bgm_piano07.mp3" autoplay loop></audio>
+    <header>
+      <div class="all-icon-container">
+        <div class="burger icon" id="open-menu-button">
+          <div class="icon-size">
+            <img src="image/home/buger_icon.png" class="w-100">
+          </div>
+        </div>
+        <div class="sound icon">
+          <div class="icon-size">
+            <img id="audioToggle" src="image/home/sound_icon.png" class="w-100">
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="comic-bg"></div>
     <div class="container front-story">
       <div class="row">
@@ -73,13 +102,15 @@
         </div>
       </div>
     </div>
-  
+
     <div class="visual-effect">
-      <div class="content" >
+      <div class="content">
         <div class="character-status">
           <!-- 現在用bg image做湘雲的反應，下面的是直接圖片 -->
-          <div class="container d-flex justify-content-center align-items-center position-relative" style="height: 100vh;">
-            <div class="col-2 position-absolute d-flex justify-content-center align-items-center position-relative" style="height: 100%;">
+          <div class="container d-flex justify-content-center align-items-center position-relative"
+            style="height: 100vh;">
+            <div class="col-2 position-absolute d-flex justify-content-center align-items-center position-relative"
+              style="height: 100%;">
               <img src="image/morning-ing/character-status-1.png" class="w-100 character-status1 position-absolute">
               <img src="image/morning-ing/character-status-2.png" class="w-100 character-status2 position-absolute">
               <img src="image/morning-ing/character-status-3.png" class="w-100 character-status3 position-absolute">
@@ -87,14 +118,16 @@
             <div class="people-look">
               <div class="flexbox-look look-horizontal-group-01">
                 <img src="image/morning-ing/look-01.png" class="pic-look" style="position:absolute; margin-right: 70%;">
-                <img src="image/morning-ing/look-02.png" class="pic-look" style="position:absolute; margin-top: 5%; margin-left: 70%;">
+                <img src="image/morning-ing/look-02.png" class="pic-look"
+                  style="position:absolute; margin-top: 5%; margin-left: 70%;">
               </div>
               <div class="flexbox-look look-horizontal-group-02">
                 <img src="image/morning-ing/look-03.png" class="pic-look" style="position:absolute; margin-right: 70%;">
                 <img src="image/morning-ing/look-04.png" class="pic-look" style="position:absolute; margin-left: 70%;">
               </div>
               <div class="flexbox-look look-horizontal-group-03">
-                <img src="image/morning-ing/look-05.png" class="pic-look" style="position:absolute; margin-top: -5%; margin-right: 70%;">
+                <img src="image/morning-ing/look-05.png" class="pic-look"
+                  style="position:absolute; margin-top: -5%; margin-right: 70%;">
                 <img src="image/morning-ing/look-06.png" class="pic-look" style="position:absolute; margin-left: 30%;">
                 <img src="image/morning-ing/look-07.png" class="pic-look" style="position:absolute; margin-left: 70%;">
               </div>
@@ -103,7 +136,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="container back-story">
       <div class="content col-12">
         <img src="image/morning-ing/morning-back.png" class="w-100">
@@ -112,6 +145,92 @@
         <a href="mobile-chapter2-page.html"><button>進入章節二</button></a>
       </div>
     </div>
+    <div id="menu">
+      <section>
+        <div class="menu-bg"></div>
+        <div class="all-icon-container">
+          <div class="close icon" id="close-menu-button">
+            <div class="icon-size">
+              <img src="image/all-need-to-use/burger-close-icon.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="container d-flex">
+          <div class="col-12">
+            <div class="content-container d-flex justify-content-center align-items-center" style="height: 100vh;">
+              <div class="line-content-box">
+                <div class="note-layout" style="width: 100%;">
+                  <div class="note-date-image d-flex justify-content-end">
+                    <img src="image/all-need-to-use/note-date.png" style="width: 10vw; padding-right: 20px;">
+                  </div>
+                </div>
+                <ul style="padding: 0 1.8vw;">
+                  <li>
+                    <span class="menu-topic-text">目錄<span class="small-size-text">MENU</span></span>
+                  </li>
+                  <li>
+                    <a href="index.html">
+                      <div class="menu-option">
+                        首頁.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-chapter-list-page.html">
+                      <div class="menu-option">
+                        劇情章節.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-message-page.html">
+                      <div class="menu-option">
+                        我有話要說.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-an-ti-bullying-information.html">
+                      <div class="menu-option">
+                        反霸凌資訊.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-reference.html">
+                      <div class="menu-option">
+                        引用資料.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-about-us.html">
+                      <div class="menu-option">
+                        關於我們.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="border"></div>
+                  </li>
+                </ul>
+                <div class="pen-layout position-absolute" style="bottom: -50px; right: -100px; width: 25vw;">
+                  <div class="pen-image">
+                    <img src="image/all-need-to-use/menu-pen.png" style="width: 100%;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 
 
@@ -119,24 +238,29 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/menu.js"></script>
   <script src="./mobile-version/mobile-rotate.js"></script>
   <script src="./mobile-version/mobile-interact.js"></script>
 
   <script>
+    openMenu();
+    closeMenu();
+    // 點擊音效開關按鈕時切換音效狀態
+    document.getElementById('audioToggle').addEventListener('click', toggleAudio);
     gsap.registerPlugin(ScrollTrigger);
 
-    function lookHorizontalGroupAnima(){
+    function lookHorizontalGroupAnima() {
       console.log("pc animation");
       //stagger好像在純動畫裡面用比較好，在這邊功能會跟scrub相衝突
       const allPicLook = document.getElementsByClassName('pic-look');
-      gsap.set(".character-status1", {autoAlpha: 1});
-      gsap.set(".character-status2", {autoAlpha: 0});
-      gsap.set(".character-status3", {autoAlpha: 0});
+      gsap.set(".character-status1", { autoAlpha: 1 });
+      gsap.set(".character-status2", { autoAlpha: 0 });
+      gsap.set(".character-status3", { autoAlpha: 0 });
 
-      gsap.set(allPicLook, {autoAlpha: 0})
+      gsap.set(allPicLook, { autoAlpha: 0 })
       const tl = gsap.timeline({
         defaults: {
-          ease:"expo",
+          ease: "expo",
         },
         scrollTrigger: {
           trigger: ".character-status",
@@ -150,31 +274,31 @@
 
       tl
         //.to(allPicLook, {stagger: {each: 0.3}})
-        .to(".look-horizontal-group-01 img:nth-child(1)", {autoAlpha: 1, x: 300})
-        .to(".look-horizontal-group-01 img:nth-child(2)", {autoAlpha: 1, x: -250})
+        .to(".look-horizontal-group-01 img:nth-child(1)", { autoAlpha: 1, x: 300 })
+        .to(".look-horizontal-group-01 img:nth-child(2)", { autoAlpha: 1, x: -250 })
         .to(".character-status1", { autoAlpha: 0 })
         .to(".character-status2", { autoAlpha: 1 }, "-=0.3")
-        .to(".look-horizontal-group-02 img:nth-child(1)", {autoAlpha: 1, x: 220}, "-=0.3")
-        .to(".look-horizontal-group-02 img:nth-child(2)", {autoAlpha: 1, x: -310})
-        .to(".look-horizontal-group-03 img:nth-child(1)", {autoAlpha: 1, x: 300})
+        .to(".look-horizontal-group-02 img:nth-child(1)", { autoAlpha: 1, x: 220 }, "-=0.3")
+        .to(".look-horizontal-group-02 img:nth-child(2)", { autoAlpha: 1, x: -310 })
+        .to(".look-horizontal-group-03 img:nth-child(1)", { autoAlpha: 1, x: 300 })
         .to(".character-status2", { autoAlpha: 0 })
         .to(".character-status3", { autoAlpha: 1 }, "-=0.3")
-        .to(".look-horizontal-group-03 img:nth-child(2)", {autoAlpha: 1, x: -80})
-        .to(".look-horizontal-group-03 img:nth-child(3)", {autoAlpha: 1, x: -200})
+        .to(".look-horizontal-group-03 img:nth-child(2)", { autoAlpha: 1, x: -80 })
+        .to(".look-horizontal-group-03 img:nth-child(3)", { autoAlpha: 1, x: -200 })
     }
 
-    function mobileLookHorizontalGroupAnima(){
+    function mobileLookHorizontalGroupAnima() {
       console.log("mobile animation");
       //stagger好像在純動畫裡面用比較好，在這邊功能會跟scrub相衝突
       const allPicLook = document.getElementsByClassName('pic-look');
-      gsap.set(".character-status1", {autoAlpha: 1});
-      gsap.set(".character-status2", {autoAlpha: 0});
-      gsap.set(".character-status3", {autoAlpha: 0});
+      gsap.set(".character-status1", { autoAlpha: 1 });
+      gsap.set(".character-status2", { autoAlpha: 0 });
+      gsap.set(".character-status3", { autoAlpha: 0 });
 
-      gsap.set(allPicLook, {autoAlpha: 0})
+      gsap.set(allPicLook, { autoAlpha: 0 })
       const tl = gsap.timeline({
         defaults: {
-          ease:"expo",
+          ease: "expo",
         },
         scrollTrigger: {
           trigger: ".character-status",
@@ -188,33 +312,33 @@
 
       tl
         //.to(allPicLook, {stagger: {each: 0.3}})
-        .to(".look-horizontal-group-01 img:nth-child(1)", {autoAlpha: 1, x: 110})
-        .to(".look-horizontal-group-01 img:nth-child(2)", {autoAlpha: 1, x: -80})
+        .to(".look-horizontal-group-01 img:nth-child(1)", { autoAlpha: 1, x: 110 })
+        .to(".look-horizontal-group-01 img:nth-child(2)", { autoAlpha: 1, x: -80 })
         .to(".character-status1", { autoAlpha: 0 })
         .to(".character-status2", { autoAlpha: 1 }, "-=0.3")
-        .to(".look-horizontal-group-02 img:nth-child(1)", {autoAlpha: 1, x: 80}, "-=0.3")
-        .to(".look-horizontal-group-02 img:nth-child(2)", {autoAlpha: 1, x: -100})
-        .to(".look-horizontal-group-03 img:nth-child(1)", {autoAlpha: 1, x: 100})
+        .to(".look-horizontal-group-02 img:nth-child(1)", { autoAlpha: 1, x: 80 }, "-=0.3")
+        .to(".look-horizontal-group-02 img:nth-child(2)", { autoAlpha: 1, x: -100 })
+        .to(".look-horizontal-group-03 img:nth-child(1)", { autoAlpha: 1, x: 100 })
         .to(".character-status2", { autoAlpha: 0 })
         .to(".character-status3", { autoAlpha: 1 }, "-=0.3")
-        .to(".look-horizontal-group-03 img:nth-child(2)", {autoAlpha: 1, x: -60})
-        .to(".look-horizontal-group-03 img:nth-child(3)", {autoAlpha: 1, x: -0})
+        .to(".look-horizontal-group-03 img:nth-child(2)", { autoAlpha: 1, x: -60 })
+        .to(".look-horizontal-group-03 img:nth-child(3)", { autoAlpha: 1, x: -0 })
     }
-    
-    function animationController(){
+
+    function animationController() {
       let width = document.documentElement.clientWidth;
       let height = document.documentElement.clientHeight;
       let isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-      if(isMobile) {
+      if (isMobile) {
         console.log("mobile");
-        if (!isAnimationLoaded){
+        if (!isAnimationLoaded) {
           mobileLookHorizontalGroupAnima();
           isAnimationLoaded = true;
         }
-      }else{
+      } else {
         console.log("pc");
-        if (!isAnimationLoaded){
+        if (!isAnimationLoaded) {
           lookHorizontalGroupAnima();
           isAnimationLoaded = true;
         }
@@ -222,7 +346,7 @@
     }
 
     let isAnimationLoaded = false; // 初始化動畫(未載入)
-    
+
     const handleAnimation = () => {
       setTimeout(() => {
         animationController();
@@ -235,4 +359,5 @@
   </script>
 
 </body>
+
 </html>

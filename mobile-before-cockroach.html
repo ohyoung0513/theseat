@@ -1,341 +1,912 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>導火線_</title>
 
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style_mobile.css">
-    <link rel="icon" href="image/webicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="image/webicon.ico" type="image/x-icon" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>導火線_</title>
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-        font-size:10px;
-      }
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style_mobile.css">
+  <link rel="icon" href="image/webicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="image/webicon.ico" type="image/x-icon" />
 
-      body{
-        --main-color: #C3DD45;
-        overflow-x: hidden;
-        max-width: 100%;
-      }
+  <style>
+    html {
+      scroll-behavior: smooth;
+      font-size: 8px;
+    }
 
-      .comic-bg{
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-        background-image: url(image/all-need-to-use/content-comic-bg.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        position: fixed;
-        z-index: -100;
-      }
+    body {
+      --main-color: #C3DD45;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
 
-      .eye-open{
-        height: 100vh; 
-        background-color: black;
-        /* margin: 0; */
-        /* position: relative; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url(image/cockroach/others-eyes-new.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        margin-bottom: 15vh;
-      }
+    .comic-bg {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/content-comic-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
 
-      .displacement {
-        filter: url(#displacementFilter3);
-      }
+    .eye-open {
+      height: 100vh;
+      background-color: black;
+      /* margin: 0; */
+      /* position: relative; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(image/cockroach/others-eyes-new.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 15vh;
+    }
 
-      #eye-svg {
-        /* width: 50%;
+    .displacement {
+      filter: url(#displacementFilter3);
+    }
+
+    #eye-svg {
+      /* width: 50%;
         height: 50vh; */
-        /* position: absolute; */
+      /* position: absolute; */
+    }
+
+    .cockroach-area svg {
+      overflow: visible;
+    }
+
+    #cockroach-path {
+      display: none;
+    }
+
+    .item {
+      height: 100vh;
+      width: 100%;
+      background-image: url(image/cockroach/stare-at.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    section .scroll {
+      width: 130%;
+      /*原本是100%*/
+      display: flex;
+      background-color: white;
+    }
+
+    section .scroll div {
+      background: white;
+      white-space: nowrap;
+      font-size: 3rem;
+      /* font-weight: bold; */
+      text-transform: uppercase;
+      animation: scroll-animate 40s linear infinite;
+      animation-delay: -40s;
+    }
+
+    section .scroll div:nth-child(2) {
+      /*有按鈕的話是(3)*/
+      animation: scroll-animate2 40s linear infinite;
+      animation-delay: -20s;
+    }
+
+    @keyframes scroll-animate {
+      0% {
+        transform: translateX(100%);
+        /*translateX(0)代表原本、未加動畫前的位置*/
       }
 
-      .cockroach-area svg{
-        overflow:visible;
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes scroll-animate2 {
+      0% {
+        transform: translateX(0%);
       }
 
-      #cockroach-path{
-        display: none;
+      100% {
+        transform: translateX(-200%);
       }
+    }
 
-      .item{
-        height: 100vh;
-        width: 100%;
-        background-image: url(image/cockroach/stare-at.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+    section .scroll.text1 {
+      border: 2px black solid;
+      transform: rotate(20deg) translateY(200px) translateX(-200px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 
-      section{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
+    section .scroll.text2 {
+      border: 2px black solid;
+      transform: rotate(-25deg) translateY(120px) translateX(-200px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 
-      section .scroll{
-        width: 130%;/*原本是100%*/
-        display: flex;
-        background-color: white;
-      }
+    section .scroll.text3 {
+      border: 2px black solid;
+      transform: rotate(-15deg) translateY(0px) translateX(-200px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 
-      section .scroll div{
-        background: white;
-        white-space: nowrap;
-        font-size: 3rem;
-        /* font-weight: bold; */
-        text-transform: uppercase;
-        animation: scroll-animate 40s linear infinite;
-        animation-delay: -40s;
-      }
+    section .scroll.text4 {
+      border: 2px black solid;
+      transform: rotate(-2deg) translateY(-150px) translateX(-200px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 
-      section .scroll div:nth-child(2){/*有按鈕的話是(3)*/
-        animation: scroll-animate2 40s linear infinite;
-        animation-delay: -20s;
-      }
+    section .scroll.text5 {
+      border: 2px black solid;
+      transform: rotate(5deg) translateY(100px) translateX(-200px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 
-      @keyframes scroll-animate{
-        0%{
-          transform: translateX(100%);/*translateX(0)代表原本、未加動畫前的位置*/
-        }
-        100%{
-          transform: translateX(-100%);
-        }
-      }
+    button {
+      margin-left: 110px;
+      width: 50px;
+      height: 50px;
+    }
 
-      @keyframes scroll-animate2{
-        0%{
-          transform: translateX(0%);
-        }
-        100%{
-          transform: translateX(-200%);
-        }
-      }
+    .eye-open,
+    .lots-murmur {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
 
-      section .scroll.text1{
-        border: 2px black solid;
-        transform: rotate(20deg) translateY(200px) translateX(-200px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      }
-      section .scroll.text2{
-        border: 2px black solid;
-        transform: rotate(-25deg) translateY(120px) translateX(-200px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      }
-      section .scroll.text3{
-        border: 2px black solid;
-        transform: rotate(-15deg) translateY(0px) translateX(-200px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      }
-      section .scroll.text4{
-        border: 2px black solid;
-        transform: rotate(-2deg) translateY(-150px) translateX(-200px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      }
-      section .scroll.text5{
-        border: 2px black solid;
-        transform: rotate(5deg) translateY(100px) translateX(-200px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      }
-
-      button{
-        margin-left: 110px;
-        width: 50px;
-        height: 50px;
-      }
-
-      .enter-the-beautiest button{
-        height: 5vh;
-        width: 10vw;
-        border: 2px solid black;
-        background-color: #C3DD45;
-        cursor: pointer;
-      }
-
-      .eye-open,
-      .lots-murmur{
-        overflow-x: hidden;
-        max-width: 100%;
-      }
-
-      /* 蟑螂路徑加載時造成手機版右側有多餘空白 */
-      /* max-width: 100%;可解決，但漫畫內容圖會變大 */
-      /* .cockroach-effect{
+    /* 蟑螂路徑加載時造成手機版右側有多餘空白 */
+    /* max-width: 100%;可解決，但漫畫內容圖會變大 */
+    /* .cockroach-effect{
         overflow-x: hidden;
         max-width: 100%;
       } */
 
-    </style>
-  </head>
+    /*menu*/
+    #menu section .menu-bg {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/menu-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
 
-  <body>
-    <div id="rotate">
-      <div class="comic-bg"></div>
-      <div class="container front-story">
-        <div class="row col-12">
-          <img src="image/cockroach/cockroach-front.jpg">
+    /* custom scrollbar */
+    body::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #585858;
+      border-radius: 8px;
+      border: 4px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #000000;
+    }
+
+    /*D-BL*/
+    .content-to-left {
+      width: 100%;
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: right;
+      opacity: 0;
+    }
+
+    .content-to-right {
+      width: 100%;
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      opacity: 0;
+    }
+
+    .content-to-down {
+      width: 100%;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      opacity: 0;
+    }
+
+    /*E-G1*/
+    textPath {
+      fill: rgb(255, 255, 255);
+      font-size: 1.5rem;
+    }
+
+    .abuse-area {
+      width: 100%;
+      height: 50vh;
+      background-color: #000000;
+    }
+
+    .abuse-area svg {
+      overflow: hidden;
+    }
+
+    /*F-G2 + G + H*/
+    /* conversation effect */
+    .effect-conversation {
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .right-bg,
+    .left-bg {
+      background-color: #000000;
+      height: 100%;
+      width: 40vw;
+    }
+
+    .left-bg {
+      width: 35%;
+    }
+
+    .left-layout>img,
+    .right-layout>img {
+      bottom: 0;
+      height: 100%;
+    }
+
+    .left-layout {
+      position: absolute;
+      height: 100%;
+    }
+
+    .right-layout {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* parallax effect */
+    .parallax-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .layer {
+      width: 100%;
+      position: absolute;
+      /*height: 用js，但壞掉了，先手動設*/
+      height: 250vh;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .eye-bg {
+      background-image: url(image/cockroach/gg/eye.png);
+    }
+
+    .mouth {
+      background-image: url(image/cockroach/gg/mouth.png);
+      /* 下面這樣設的話嘴巴不會有明顯被切掉的感覺，但嘴巴數量就較少*/
+      background-position: bottom center;
+    }
+
+    /*.people{
+       background-image: url(image/cockroach/gg/people.png);
+      width: 30%;
+      right: 0;
+      background-size: fill; 
+    }*/
+  </style>
+</head>
+
+<body>
+  <div id="rotate">
+    <audio id="audio" src="bgm/maou_bgm_piano16.mp3" loop autoplay></audio>
+  <header>
+    <div class="all-icon-container">
+      <div class="burger icon" id="open-menu-button">
+        <div class="icon-size">
+          <img src="image/home/buger_icon.png" class="w-100">
         </div>
       </div>
-
-      <div class="eye-open">
-        <svg id="eye-svg" width="500" height="280" viewBox="0 0 500 280" preserveAspectRatio="xMidYMid meet">
-          <defs>
-            <filter id="displacementFilter3">
-              <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" result="displacement" xChannelSelector="R" yChannelSelector="G" />
-            </filter>
-            <mask id="pathMask">
-              <path id="myPath" viewBox = "0 0 579 290" preserveAspectRatio="xMidYMid slice" d="M 0 140 Q 250 140 500 140 Q 250 140 0 140" fill="white" class="mask" style="filter: url(#displacementFilter3);"></path>
-            </mask>
-          </defs>
-          <image xlink:href="image/cockroach/eye-image-new.png" width="100%" height="100%" mask="url(#pathMask)" />
-        </svg>
-      </div>
-
-      <div class="container middle-story" style="z-index: 100;">
-        <div class="row col-12">
-          <img src="image/cockroach/cockroach-middle.jpg">
+      <div class="sound icon">
+        <div class="icon-size">
+          <img id="audioToggle" src="image/home/sound_icon.png" class="w-100">
         </div>
       </div>
+    </div>
+  </header>
 
-      <div class="container cockroach-effect">
-        <div class="row col-12">
-          <div class="cockroach-path-content position-relative" style="z-index: 0;">
-            <img src="image/cockroach/cockroach-find-cockroach.jpg" class="w-100">
+    <div class="comic-bg"></div>
+    <div class="container front-story">
+      <div class="row col-12">
+        <img src="image/cockroach/cockroach-front.jpg">
+      </div>
+    </div>
+
+    <div class="eye-open">
+      <svg id="eye-svg" width="500" height="280" viewBox="0 0 500 280" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="displacementFilter3">
+            <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" result="displacement" xChannelSelector="R"
+              yChannelSelector="G" />
+          </filter>
+          <mask id="pathMask">
+            <path id="myPath" viewBox="0 0 579 290" preserveAspectRatio="xMidYMid slice"
+              d="M 0 140 Q 250 140 500 140 Q 250 140 0 140" fill="white" class="mask"
+              style="filter: url(#displacementFilter3);"></path>
+          </mask>
+        </defs>
+        <image xlink:href="image/cockroach/eye-image-new.png" width="100%" height="100%" mask="url(#pathMask)" />
+      </svg>
+    </div>
+
+    <div class="container middle-story" style="z-index: 100;">
+      <div class="row col-12">
+        <img src="image/cockroach/cockroach-middle.jpg">
+      </div>
+    </div>
+
+    <div class="container cockroach-effect">
+      <div class="row col-12">
+        <div class="cockroach-path-content position-relative" style="z-index: 0;">
+          <img src="image/cockroach/cockroach-find-cockroach.jpg" class="w-100">
+        </div>
+        <div class="cockroach-area" style="position: absolute;">
+          <svg width="80.4" height="55.2" viewBox="0 0 67 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="cockroach-svg">
+              <path d="M31.0567 15.5331C37.5387 17.4064 53.5264 17.678 65.6213 3.77737" stroke="#3d0e0e"
+                stroke-width="1.5" stroke-linecap="round" />
+              <ellipse cx="17.7607" cy="18.039" rx="17.7608" ry="10.3966" transform="rotate(-180 17.7607 18.039)"
+                fill="#3d0e0e" />
+              <path
+                d="M23.6808 27.2805C24.2584 28.9651 25.067 32.6231 23.6808 33.7783M17.183 27.2805C17.5199 29.0614 17.9916 32.8542 17.183 33.7783M12.1291 27.2805C11.6959 29.4464 10.2808 33.7783 8.08597 33.7783M12.1291 7.78694C11.9365 6.5355 10.8584 3.74384 8.08598 2.58867M17.183 7.78694C18.0012 5.86165 19.1468 1.80892 17.183 1.0003M22.67 8.65332C23.9696 8.172 27.6661 5.59211 28.0127 2.58867"
+                stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M28.0842 19.3383C38.8658 21.2154 59.5915 28.9551 56.2415 44.8965" stroke="#3d0e0e"
+                stroke-width="1.5" stroke-linecap="round" />
+            </g>
+          </svg>
+          <svg width="536" height="411" viewBox="0 0 536 411" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="cockroach-path"
+              d="M57.7312 1C19.4487 23.8117 -37.8894 74.9223 39.0175 96.8709C135.151 124.307 545.192 123.05 353.678 231.738C309.929 256.566 270.991 265.323 246.65 272.587C151.141 301.085 -16.9441 358.145 256.639 412"
+              stroke="black" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="kill-cockroach container">
+      <div class="row col-12">
+        <img src="image/cockroach/cockroach-kill-cockroach.jpg">
+      </div>
+    </div>
+
+    <div class="lots-murmur position-relative">
+      <div class="item">
+        <section>
+          <div class="scroll text1 js-text1">
+            <div>
+              她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
+            </div>
+            <div>
+              她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
+            </div>
           </div>
-          <div class="cockroach-area" style="position: absolute;">
-            <svg width="80.4" height="55.2" viewBox="0 0 67 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="cockroach-svg">
-                <path d="M31.0567 15.5331C37.5387 17.4064 53.5264 17.678 65.6213 3.77737" stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round"/>
-                <ellipse cx="17.7607" cy="18.039" rx="17.7608" ry="10.3966" transform="rotate(-180 17.7607 18.039)" fill="#3d0e0e"/>
-                <path d="M23.6808 27.2805C24.2584 28.9651 25.067 32.6231 23.6808 33.7783M17.183 27.2805C17.5199 29.0614 17.9916 32.8542 17.183 33.7783M12.1291 27.2805C11.6959 29.4464 10.2808 33.7783 8.08597 33.7783M12.1291 7.78694C11.9365 6.5355 10.8584 3.74384 8.08598 2.58867M17.183 7.78694C18.0012 5.86165 19.1468 1.80892 17.183 1.0003M22.67 8.65332C23.9696 8.172 27.6661 5.59211 28.0127 2.58867" stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M28.0842 19.3383C38.8658 21.2154 59.5915 28.9551 56.2415 44.8965" stroke="#3d0e0e" stroke-width="1.5" stroke-linecap="round"/>
-              </g>
-              </svg>
-            <svg width="536" height="411" viewBox="0 0 536 411" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path id="cockroach-path" d="M57.7312 1C19.4487 23.8117 -37.8894 74.9223 39.0175 96.8709C135.151 124.307 545.192 123.05 353.678 231.738C309.929 256.566 270.991 265.323 246.65 272.587C151.141 301.085 -16.9441 358.145 256.639 412" stroke="black" stroke-width="2"/>
-            </svg>  
+          <div class="scroll text2 js-text2">
+            <div>
+              教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
+            </div>
+            <div>
+              教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
+            </div>
+          </div>
+          <div class="scroll text3 js-text3">
+            <!-- 手機出現一點點 -->
+            <div>
+              好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
+            </div>
+            <div>
+              好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
+            </div>
+          </div>
+          <div class="scroll text4 js-text4">
+            <div>
+              好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
+            </div>
+            <div>
+              好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
+            </div>
+          </div>
+          <div class="scroll text5 js-text5">
+            <!-- 手機沒出現 -->
+            <div>
+              亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
+            </div>
+            <div>
+              亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row col-12">
+        <img src="image/cockroach/cockroach-back.jpg">
+      </div>
+    </div>
+
+    <!--選擇區-->
+    <div class="container choice-box firstchoice">
+      <div class="text d-flex flex-column justify-content-center align-items-center" style="margin-bottom: 2vh;">
+        <div class="box choice-title">
+          <h1>做出選擇</h1>
+        </div>
+        <div class="choices" style="height: 60vh;">
+          <div class="eachchoice">
+            <div class="choicepic">
+              <iframe src="choice-pic/mobile-choice-cobl.html" frameborder="0" scrolling="no" framespacing="0"
+                allowfullscreen="true"></iframe>
+            </div>
+            <div class="button-layout d-flex justify-content-end align-items-center">
+              <a onclick="makeChoice(1)">
+                <div class="button-container d-flex justify-content-center align-items-center">
+                  <div style="font-size: 2rem;">繼續</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="eachchoice">
+            <div class="choicepic">
+              <iframe src="choice-pic/mobile-choice-cog.html" frameborder="0" scrolling="no" framespacing="0"
+                allowfullscreen="true"></iframe>
+            </div>
+            <div class="button-layout d-flex justify-content-end align-items-center">
+              <a onclick="makeChoice(2)">
+                <div class="button-container d-flex justify-content-center align-items-center">
+                  <div style="font-size: 2rem;">繼續</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="eachchoice">
+            <div class="choicepic">
+              <iframe src="choice-pic/mobile-choice-cogg.html" frameborder="0" scrolling="no" framespacing="0"
+                allowfullscreen="true"></iframe>
+            </div>
+            <div class="button-layout d-flex justify-content-end align-items-center">
+              <a onclick="makeChoice(3)">
+                <div class="button-container d-flex justify-content-center align-items-center">
+                  <div style="font-size: 2rem;">繼續</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="kill-cockroach container">
-        <div class="row col-12">
-          <img src="image/cockroach/cockroach-kill-cockroach.jpg">
+    </div>
+    <!-- 分支 D-BL 的內容容器 -->
+    <div class="choice-content " id="branchD">
+      <div class="front-story container">
+        <div class="col-12">
+          <img src="image/cockroach/b/front-story.png" class="w-100">
         </div>
       </div>
-      
-      <div class="lots-murmur position-relative">
-        <div class="item">
-          <section>
-            <div class="scroll text1 js-text1">
-              <div>
-                她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
-              </div>
-              <div>
-                她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
-              </div>
-            </div>
-            <div class="scroll text2 js-text2">
-              <div>
-                教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
-              </div>
-              <div>
-                教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
-              </div>
-            </div>
-            <div class="scroll text3 js-text3">
-              <!-- 手機出現一點點 -->
-              <div>
-                好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
-              </div>
-              <div>
-                好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
+      <div class="image-reveal-effect-section1" style="margin-top: 5%;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7"><!-- 原本是8欄 -->
+              <div class="reveal-box">
+                <div class="col-12">
+                  <div class="content-to-left">
+                    <img src="image/cockroach/b/section1-top.png" class="w-100">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="content-to-left">
+                        <img src="image/cockroach/b/section1-content1.png" class="w-100">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="content-to-right">
+                        <img src="image/cockroach/b/section1-down.png" class="w-100">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="scroll text4 js-text4">
-              <div>
-                好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
-              </div>
-              <div>
-                好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
+
+            <div class="col-md-5">
+              <div class="content-to-down">
+                <img src="image/cockroach/b/section1-content2.png" class="w-100">
               </div>
             </div>
-            <div class="scroll text5 js-text5">
-              <!-- 手機沒出現 -->
-              <div>
-                亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
-              </div>
-              <div>
-                亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
-              </div>
-            </div>
-          </section>
+          </div>
         </div>
       </div>
-
-      <div class="container">
-        <div class="row col-12">
-          <img src="image/cockroach/cockroach-back.jpg">
+      <div class="image-reveal-effect-section2" style="margin-top: 10vh;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="col-12">
+                <div class="content-to-left">
+                  <img src="image/cockroach/b/section2-content3.png" class="w-100">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="content-to-right">
+                      <img src="image/cockroach/b/section2-left.png" class="w-100">
+                    </div>
+                  </div>
+                  <div class="col-4 d-flex align-content-center flex-wrap">
+                    <div class="col-md-12">
+                      <div class="content-to-left">
+                        <img src="image/cockroach/b/section2-content4.png" class="w-100">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="content-to-left">
+                        <img src="image/cockroach/b/section2-content5.png" class="w-100">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="content-to-down">
+                <img src="image/cockroach/b/section2-right.png" class="w-100">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
+      <div class="back-story container">
+        <div class="col-12">
+          <img src="image/cockroach/b/back-story.jpg" class="w-100">
+        </div>
+      </div>
+      <iframe id="addFrame" src="add_cockroach_blue.html"
+        style="width: 100%; height: 1300px; border: none; display: none;"></iframe>
       <div class="go-next-web" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
         <a href="mobile-chapter4.-page.html"><button>進入章節四</button></a>
       </div>
     </div>
-    
-  </body>
+    <!-- 分支 E-G1 的內容容器 -->
+    <div class="choice-content" id="branchE">
+      <div class="abuse-effect">
+        <div class="pin">
+          <div class="abuse-area container position-relative">
+            <svg viewBox="0 0 1240 174" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"
+              class="position-absolute">
+              <path id="curve-1" d="M0.5 126C174 11 223.5 200.5 462.5 169C765.76 105.067 964.5 -74.5 1239.5 36"
+                fill="transparent" />
+              <text>
+                <textPath id="text-path-1" href="#curve-1" startOffset="70%">
+                  從以前到現在我就覺得你衛生習慣很差，這次好了吧！直接證實我的猜想。
+                </textPath>
+              </text>
+            </svg>
+            <svg viewBox="0 0 1202 157" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"
+              class="position-absolute">
+              <path id="curve-2" d="M0.5 84.9999C207.5 -14 413.7 -34.9 644.5 71.5C892.5 177.5 1056.5 175 1201 112"
+                fill="transparent" />
+              <text>
+                <textPath id="text-path-2" href="#curve-2" startOffset="70%">
+                  那隻蟑螂那麼肥那麼大隻，該不會在抽屜裡當寵物在養吧，真噁心人！
+                </textPath>
+              </text>
+            </svg>
+            <svg viewBox="0 0 1160 229" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"
+              class="position-absolute">
+              <path id="curve-3" d="M1 150.5C90.1667 188.667 177 231.5 433.5 121C803 -115.5 1017 49 1159 186.5"
+                fill="transparent" />
+              <text>
+                <textPath id="text-path-3" href="#curve-3" startOffset="70%">
+                  拜託你能不能乾淨一點！哪天我的座位也有蟑螂怎麼辦！我真的很怕蟑螂！
+                </textPath>
+              </text>
+            </svg>
+            <div class="abuse-pic">
+              <img src="image/cockroach/g/abuse-left.png" class="position-absolute"
+                style="left: 0; top: 0; height: 100%;">
+              <img src="image/cockroach/g/abuse-right.png" class="position-absolute"
+                style="right: 0; top: 0; height: 100%;">
+            </div>
+          </div>
+        </div>
+        <div class="abuse-look container">
+          <div class="col-12">
+            <img src="image/cockroach/g/abuse-look.png" class="w-100">
+          </div>
+        </div>
+      </div>
+      <div class="back-story container">
+        <div class="col-12">
+          <img src="image/cockroach/g/back.png" class="w-100">
+        </div>
+      </div>
+      <iframe id="addFrame" src="add_cockroach_other.html"
+        style="width: 100%; height: 1300px; border: none; display: none;"></iframe>
+      <div class="go-next-web" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
+        <a href="mobile-chapter4.-page.html"><button>進入章節四</button></a>
+      </div>
+    </div>
+    <!-- 分支 F-G2 的內容容器 --> <!--內含 G H 的分支-->
+    <div class="choice-content" id="branchF">
+      <div class="front-story container">
+        <div class="col-12">
+          <img src="image/cockroach/gg/front-story.png" class="w-100">
+        </div>
+        <div class="conversation-container">
+          <div class="effect-conversation container position-relative" style="padding: 0;">
+            <div class="left-bg position-absolute"></div>
+            <div class="right-bg position-absolute" style="right: 0;"></div>
+            <div class="left-layout">
+              <img src="image/cockroach/gg/left-1.png" class="img-left-1 position-absolute">
+            </div>
+            <div class="right-layout">
+              <img src="image/cockroach/gg/right-1.png" class="img-right-1 position-absolute">
+            </div>
+            <div class="right-layout">
+              <img src="image/cockroach/gg/frame2-right.jpg" class="position-absolute" id="img-converation">
+            </div>
+            <div class="left-layout">
+              <img src="image/cockroach/gg/frame2-left.jpg" class="position-absolute" id="img-converation">
+            </div>
+            <div class="right-layout">
+              <img src="image/cockroach/gg/frame3-right.jpg" class="position-absolute" id="img-converation">
+            </div>
+            <div class="left-layout">
+              <img src="image/cockroach/gg/frame3-left.jpg" class="position-absolute" id="img-converation">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-12">
+          <img src="image/cockroach/gg/after-conversation-story.png" class="w-100">
+        </div>
+      </div>
+      <div class="parallax-effect">
+        <div class="eye-bg parallax layer" data-depth="0.3"></div>
+        <div class="mouth  parallax layer" data-depth="0.8"></div>
+        <!-- <div class="people parallax layer"></div> -->
+        <div class="content container">
+          <div class="img-pressure-content position-relative">
+            <img src="image/cockroach/gg/pressure-content.png" class="w-100" id="pressureImageHeight">
+            <!-- <div class="classmate  position-absolute" style="right: 0; z-index: 100;">
+            <img src="image/cockroach/gg/people.png" class="w-50">
+          </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!--選擇區-->
+      <div class="container choice-box secondchoice">
+        <div class="text d-flex flex-column justify-content-center align-items-center" style="margin-bottom: 2vh;">
+          <div class="box choice-title">
+            <h1>做出選擇</h1>
+          </div>
+          <div class="choices" style="height: 60vh;">
+            <div class="eachchoice">
+              <div class="choicepic">
+                <iframe src="choice-pic/mobile-choice-coggg.html" frameborder="0" scrolling="no" framespacing="0"
+                  allowfullscreen="true"></iframe>
+              </div>
+              <div class="button-layout d-flex justify-content-end align-items-center">
+                <a onclick="makeChoice(4)">
+                  <div class="button-container d-flex justify-content-center align-items-center">
+                    <div style="font-size: 2rem;">繼續</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="eachchoice">
+              <div class="choicepic">
+                <iframe src="choice-pic/mobile-choice-coggr.html" frameborder="0" scrolling="no" framespacing="0"
+                  allowfullscreen="true"></iframe>
+              </div>
+              <div class="button-layout d-flex justify-content-end align-items-center">
+                <a onclick="makeChoice(5)">
+                  <div class="button-container d-flex justify-content-center align-items-center">
+                    <div style="font-size: 2rem;">繼續</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 分支 G-G3 的內容容器 -->
+      <div class="choice-content" id="branchG">
+        <div class="container">
+          <div class="back-story">
+            <div class="col-12">
+              <img src="image/cockroach/gg/after-pressure-story.png" class="w-100">
+            </div>
+          </div>
+          <iframe id="addFrame" src="add_cockroach_other.html"
+            style="width: 100%; height: 1500px; border: none; display: none;"></iframe>
+          <div class="go-next-web" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
+            <a href="mobile-chapter4.-page.html"><button>進入章節四</button></a>
+          </div>
+        </div>
+      </div>
+      <!-- 分支 H-R 的內容容器 -->
+      <div class="choice-content" id="branchH">
+        <div class="container">
+          <img src="image/cockroach/gg/cockroach-red.jpg" class="w-100">
+          <iframe id="addFrame" src="add_cockroach_other.html"
+            style="width: 100%; height: 1500px; border: none; display: none;"></iframe>
+          <div class="go-next-web" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
+            <a href="mobile-chapter4.-page.html"><button>進入章節四</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu">
+      <section>
+        <div class="menu-bg"></div>
+        <div class="all-icon-container">
+          <div class="close icon" id="close-menu-button">
+            <div class="icon-size">
+              <img src="image/all-need-to-use/burger-close-icon.png" class="w-100">
+            </div>
+          </div>
+        </div>
+        <div class="container d-flex">
+          <div class="col-12">
+            <div class="content-container d-flex justify-content-center align-items-center" style="height: 100vh;">
+              <div class="line-content-box">
+                <div class="note-layout" style="width: 100%;">
+                  <div class="note-date-image d-flex justify-content-end">
+                    <img src="image/all-need-to-use/note-date.png" style="width: 10vw; padding-right: 20px;">
+                  </div>
+                </div>
+                <ul style="padding: 0 1.8vw;">
+                  <li>
+                    <span class="menu-topic-text">目錄<span class="small-size-text">MENU</span></span>
+                  </li>
+                  <li>
+                    <a href="index.html">
+                      <div class="menu-option">
+                        首頁.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-chapter-list-page.html">
+                      <div class="menu-option">
+                        劇情章節.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-message-page.html">
+                      <div class="menu-option">
+                        我有話要說.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-an-ti-bullying-information.html">
+                      <div class="menu-option">
+                        反霸凌資訊.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-reference.html">
+                      <div class="menu-option">
+                        引用資料.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mobile-about-us.html">
+                      <div class="menu-option">
+                        關於我們.
+                        <div class="hover-line"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="border"></div>
+                  </li>
+                </ul>
+                <div class="pen-layout position-absolute" style="bottom: -50px; right: -100px; width: 25vw;">
+                  <div class="pen-image">
+                    <img src="image/all-need-to-use/menu-pen.png" style="width: 100%;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
   <script src="./mobile-version/mobile-rotate.js"></script>
   <script src="./mobile-version/mobile-interact.js"></script>
-    
+  <script src="js/menu.js"></script>
   <script>
+openMenu();
+    closeMenu();
+    // 點擊音效開關按鈕時切換音效狀態
+    document.getElementById('audioToggle').addEventListener('click', toggleAudio);
+
     gsap.registerPlugin(MotionPathPlugin);
     gsap.registerPlugin(ScrollTrigger);
-    
+
     //eye open
-    function makeEyeOpen(){
+    function makeEyeOpen() {
       const pathMask = document.getElementById("myPath");
       const targetPath = "M 0 140 Q 250 400 500 140 Q 250 -100 0 140";
 
       let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: ".eye-open",
-            start: "top top",
-            end: "center top",
-            scrub: true,
-            pin: true,
-            // markers: true,
-            toggleActions: 'play none none reverse'
+          trigger: ".eye-open",
+          start: "top top",
+          end: "center top",
+          scrub: true,
+          pin: true,
+          // markers: true,
+          toggleActions: 'play none none reverse'
         }
       });
 
       tl.to(pathMask, {
-        duration: 1.5, 
-        attr: { d: targetPath }, 
-        ease: "power2.inOut" 
+        duration: 1.5,
+        attr: { d: targetPath },
+        ease: "power2.inOut"
       });
     }
 
     //cockroach path
-    function makeCockroachMove(){
+    function makeCockroachMove() {
       let cockroachAnimation = gsap.timeline({
         scrollTrigger: {
           trigger: ".cockroach-area",
@@ -348,7 +919,7 @@
         }
       });
 
-      cockroachAnimation.to("#cockroach-svg",{
+      cockroachAnimation.to("#cockroach-svg", {
         duration: 5,
         ease: "none",
         motionPath: {
@@ -359,9 +930,198 @@
         }
       });
     }
-    
+
     makeEyeOpen();
     makeCockroachMove();
+    //選擇區//
+    function makeChoice(choice) {
+      // 隱藏所有分支內容
+      /*document.querySelectorAll('.choice-content').forEach(content => {
+          content.style.display = 'none';
+      });*/
+
+      // 根據不同的選擇，顯示相應的分支內容&補充資訊
+      if (choice === 1) {
+        document.querySelectorAll('#branchD').forEach(content => {
+          content.style.display = 'block';
+        });
+        //D-BL//
+        const triggerSection1 = document.querySelector(".image-reveal-effect-section1");
+        const triggerSection2 = document.querySelector(".image-reveal-effect-section2");
+
+        const imageRevealAnimationSection1 = gsap.timeline({
+          ease: "expo.inOut",
+          // stagger: 0.1,
+          scrollTrigger: {
+            trigger: triggerSection1,
+            start: "top center",
+            end: "bottom center",
+            scrub: false,
+            //markers: true
+          }
+        });
+
+        imageRevealAnimationSection1
+          .to(".image-reveal-effect-section1 .content-to-left", { scaleX: 1, opacity: 1 })
+          .to(".image-reveal-effect-section1 .content-to-right", { scaleX: 1, opacity: 1 }, "+=0.2")
+          .to(".image-reveal-effect-section1 .content-to-down", { scaleY: 1, opacity: 1 })
+
+        const imageRevealAnimationSection2 = gsap.timeline({
+          ease: "expo.inOut",
+          // stagger: 0.1,
+          scrollTrigger: {
+            trigger: triggerSection2,
+            start: "top center",
+            end: "bottom center",
+            scrub: false,
+            // markers: true
+          }
+        });
+
+        imageRevealAnimationSection2
+          .to(".image-reveal-effect-section2 .content-to-left", { scaleX: 1, opacity: 1 })
+          .to(".image-reveal-effect-section2 .content-to-right", { scaleX: 1, opacity: 1 })
+          .to(".image-reveal-effect-section2 .content-to-down", { scaleY: 1, opacity: 1 })
+
+        document.querySelectorAll('#addFrame').forEach(content => {
+          content.style.display = 'block';
+        });
+
+      } else if (choice === 2) {
+        document.querySelectorAll('#branchE').forEach(content => {
+          content.style.display = 'block';
+        });
+        textAnimation();
+        document.querySelectorAll('#addFrame').forEach(content => {
+          content.style.display = 'block';
+        });
+
+      } else if (choice === 3) {
+        document.querySelectorAll('#branchF').forEach(content => {
+          content.style.display = 'block';
+        });
+        conversationEffect();
+        parallaxEffect();
+      } else if (choice === 4) {
+        document.querySelectorAll('#branchG').forEach(content => {
+          content.style.display = 'block';
+        });
+        document.querySelectorAll('#addFrame').forEach(content => {
+          content.style.display = 'block';
+        });
+
+      } else if (choice === 5) {
+        document.querySelectorAll('#branchH').forEach(content => {
+          content.style.display = 'block';
+        });
+        document.querySelectorAll('#addFrame').forEach(content => {
+          content.style.display = 'block';
+        });
+
+      }
+      // 隱藏部分選項區
+      if (choice < 4) {
+        document.querySelectorAll('.firstchoice').forEach(content => {
+          content.style.display = 'none';
+        });
+      } else if (choice === 4) {
+        document.querySelectorAll('.secondchoice').forEach(content => {
+          content.style.display = 'none';
+        });
+      } else if (choice === 5) {
+        document.querySelectorAll('.secondchoice').forEach(content => {
+          content.style.display = 'none';
+        });
+      }
+    }
+
+    //E-G1//
+    function textAnimation() {
+      const pinParent = document.querySelector(".pin");
+      const textPaths = gsap.utils.toArray("[id^='text-path-']"); // 選擇所有以 'text-path-' 開頭的id
+
+      const textAnimation2 = gsap.to(textPaths, {
+        attr: { startOffset: "0%" },
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: ".abuse-area",
+          start: "top top+=10%",
+          end: "bottom top+=10%",
+          scrub: true,
+          pin: pinParent,
+          // pinSpacing: false,
+          // markers: true,
+        },
+      });
+
+      console.log(textPaths);
+    }
+
+
+    //F-G2//
+    // parallax背景圖高度跟內容圖同高，但壞掉了q
+    function getImageHeight() {
+      const pressureImage = document.querySelector('#pressureImageHeight');
+      let layer = document.querySelector('.layer');
+
+      pressureImage.onload = function () {
+        const imageHeight = pressureImage.height;
+        console.log(imageHeight);
+        layer.style.height = `${imageHeight}px`;
+        console.log(layer.style.height);
+      };
+    }
+
+    function conversationEffect() {
+      const pinParent = document.querySelector(".conversation-container");
+      const imgs = gsap.utils.toArray("[id^='img-converation']");
+
+      gsap.set(imgs, { yPercent: 101 });
+
+      const animation = gsap.to(imgs, {
+        yPercent: 0, duration: 1, stagger: 1, ease: "linear"
+      })
+
+      // const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: ".effect-conversation",
+      //     start: "top center-=20%",
+      //     end: "bottom center-=20%",
+      //     scrub: true,
+      //     pin: pinParent,
+      //     markers: true,
+      //   }
+      // });
+
+      ScrollTrigger.create({
+        trigger: ".effect-conversation",
+        start: "top center-=25%",
+        end: "bottom top",
+        scrub: true,
+        pin: pinParent,
+        animation: animation,
+        // markers: true,
+      })
+    }
+
+    function parallaxEffect() {
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".parallax-effect",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      gsap.utils.toArray(".parallax").forEach(layer => {
+        const depth = layer.dataset.depth;
+        const movement = -(layer.offsetHeight * depth)
+        tl.to(layer, { y: movement, ease: "none", duration: 5 }, 0)
+      });
+    }
   </script>
+</body>
 
 </html>

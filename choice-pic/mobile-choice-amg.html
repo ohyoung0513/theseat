@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>確定的手機選擇-Tap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobile-choice{
+      position: relative;
+      display: flex;
+    }
+    
+    .mobile-choice .content{
+      height: 200px;
+      width: 1000px;
+      transform: scaleX(1);
+    }
+
+    .mobile-choice .content img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #text-image{
+      display: none;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    #original-image{
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<div class="mobile-choice">
+  <div class="content">
+    <img src="../image/after-morning-ing/choices/am_g.png" id="original-image">
+    <img src="../image/after-morning-ing/choices/am_g_2.png" id="text-image">
+  </div>
+</div>
+<body>
+  
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+<script>
+ const originalImage = document.getElementById("original-image");
+ const textImage = document.getElementById("text-image");
+
+ originalImage.addEventListener("click", function(){
+  textImage.style.display = "block";
+  textImage.style.opacity = "1";
+  textImage.style.transitionDuration = "2000ms";
+ });
+
+ textImage.addEventListener("click", function(){
+  textImage.style.display = "none";
+  textImage.style.opacity = "0";
+  textImage.style.transitionDuration = "2000ms";
+ });
+</script>
+
+</body>
+</html>
