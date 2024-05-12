@@ -85,7 +85,11 @@
     position: absolute;
     margin-top: 30vh;
     margin-left: 18vw;
+    font-family: 'Noto Sans TC', sans-serif;
     font-size: 0.8vw;
+    color: #C3DD45;
+    /* -webkit-text-stroke: 0.2px #fff; */
+    text-shadow: 0.5px 0.5px 0px black;
     font-weight: bold;
     z-index: 100;
   }
@@ -219,7 +223,7 @@
     <div class="rugay">
       <div class="container" style="position: relative;">
         <div class="text pic-opacity">
-          <p style="-webkit-text-stroke: 0.2px #ffffff; font-weight: bold;">難道你也喜歡<br>翻車魚嗎？</p>
+          <p>難道你也喜歡<br>翻車魚嗎？</p>
         </div>
         <img src="image/after-morning-ing/bl/rugay.png" class="w-100">
         <img src="image/after-morning-ing/bl/dont.png" class="w-50 pic-opacity dont"
@@ -249,13 +253,15 @@
     <div class="crack-effect container position-relative">
       <div class="crack-image-container">
         <img src="image/after-morning-ing/g/crack-1.png" alt="Image 1" id="crack-1" class="w-100">
-        <img src="image/after-morning-ing/g/crack-2.png" alt="Image 2" id="crack-2" class="w-100">
+        <!-- <img src="image/after-morning-ing/g/crack-2.png" alt="Image 2" id="crack-2" class="w-100"> -->
         <img src="image/after-morning-ing/g/crack-3.png" alt="Image 3" id="crack-3" class="w-100">
         <img src="image/after-morning-ing/g/crack-4.png" alt="Image 4" id="crack-4" class="w-100">
         <img src="image/after-morning-ing/g/crack-5.png" alt="Image 5" id="crack-5" class="w-100">
-        <!--<img src="image/after-morning-ing/g/crack-6.png" alt="Image 6" id="crack-6" class="w-100">-->
+        <!-- <img src="image/after-morning-ing/g/crack-6.png" alt="Image 6" id="crack-6" class="w-100"> -->
       </div>
-      <img src="image/after-morning-ing/g/front.png" class="w-100 crack-content">
+      <div class="container">
+        <img src="image/after-morning-ing/g/front.png" class="w-100 crack-content">
+      </div>
     </div>
     <div class="back-story container">
       <div class="col-12">
@@ -510,15 +516,6 @@
       });
     }
 
-    //move//
-    function movepic() {
-      gsap.to(".choice-content", 1, {
-        y: 100,
-        ease: "power4.inOut",
-      });
-    }
-
-
 
     //A-BL//
 
@@ -580,7 +577,7 @@
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".path-container",
-          start: "top top+=20%",
+          start: "top top+=35%",
           end: "bottom top",
           scrub: true,
           //markers: true,

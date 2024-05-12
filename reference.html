@@ -97,18 +97,19 @@
         padding: 1vh;
       }
     }
+
     /*menu*/
     #menu section .menu-bg {
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-                background-image: url(image/all-need-to-use/menu-bg.png);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-                position: fixed;
-                z-index: -100;
-            }
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-image: url(image/all-need-to-use/menu-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: fixed;
+      z-index: -100;
+    }
   </style>
 </head>
 
@@ -123,7 +124,7 @@
       </div>
       <div class="sound icon">
         <div class="icon-size">
-          <img id="audioToggle" src="image/home/sound_icon_2.png" class="w-100">
+          <img id="audioToggle" src="image/home/sound_icon.png" class="w-100">
         </div>
       </div>
     </div>
@@ -619,7 +620,7 @@
     closeMenu();
     // 點擊音效開關按鈕時切換音效狀態
     document.getElementById('audioToggle').addEventListener('click', toggleAudio);
-    window.onload = toggleAudio;
+    
   </script>
 
 

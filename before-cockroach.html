@@ -91,7 +91,7 @@
     section .scroll div {
       background: white;
       white-space: nowrap;
-      font-size: 3em;
+      font-size: 4rem;
       font-weight: bold;
       text-transform: uppercase;
       animation: scroll-animate 40s linear infinite;
@@ -127,19 +127,19 @@
 
     section .scroll.text1 {
       border: 4px black solid;
-      transform: rotate(20deg) translateY(200px) translateX(-200px);
+      transform: rotate(20deg) translateY(300%) translateX(-10%);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 
     section .scroll.text2 {
       border: 4px black solid;
-      transform: rotate(-25deg) translateY(120px) translateX(-200px);
+      transform: rotate(-25deg) translateY(200%) translateX(-10%);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 
     section .scroll.text3 {
       border: 4px black solid;
-      transform: rotate(15deg) translateY(300px) translateX(-200px);
+      transform: rotate(15deg) translateY(550%) translateX(-10%);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 
@@ -151,7 +151,7 @@
 
     section .scroll.text5 {
       border: 4px black solid;
-      transform: rotate(5deg) translateY(250px) translateX(-200px);
+      transform: rotate(-3deg) translateY(500%) translateX(-10%);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 
@@ -221,8 +221,10 @@
 
     /*E-G1*/
     textPath {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 500;
       fill: rgb(255, 255, 255);
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
 
     .abuse-area {
@@ -359,7 +361,7 @@
   <div class="container cockroach-effect">
     <div class="row col-12">
       <div class="cockroach-path-content position-relative" style="z-index: 0;">
-        <img src="image/cockroach/cockroach-find-cockroach.jpg" class="w-100">
+        <img src="image/cockroach/cockroach-find-cockroach.png" class="w-100">
       </div>
       <div class="cockroach-area" style="position: absolute;">
         <svg width="169" height="171" viewBox="0 0 169 171" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -391,12 +393,8 @@
 
   <div class="lots-murmur position-relative">
     <div class="item">
-      <!-- <button onclick="makeInfiniteClose1()" class="js-button1 position-absolute">X1</button> -->
       <section>
         <div class="scroll text1 js-text1">
-          <!-- <button onclick="makeInfiniteClose1()" class="js-button1 position-absolute">
-              <img src="image/close.png" style="object-fit: contain; height: 40px; padding-left: 15px; display: flex; align-items: center;" class="img-close">
-            </button> -->
           <div>
             她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？她的抽屜到底裝了什麼會爬出蟑螂？
           </div>
@@ -405,9 +403,6 @@
           </div>
         </div>
         <div class="scroll text2 js-text2">
-          <!-- <button onclick="makeInfiniteClose2()" class="js-button2 position-absolute">
-              <img src="image/close.png" style="object-fit: contain; height: 40px; padding-left: 80px; display: flex; align-items: center;" class="img-close">
-            </button> -->
           <div>
             教室裡出現蟑螂不是很正常嗎？路過而已吧？教室裡出現蟑螂不是很正常嗎？路過而已吧？
           </div>
@@ -416,9 +411,6 @@
           </div>
         </div>
         <div class="scroll text3 js-text3">
-          <!-- <button onclick="makeInfiniteClose3()" class="js-button3 position-absolute">
-              <img src="image/close.png" style="object-fit: contain; height: 40px; padding-left: 80px; display: flex; align-items: center;" class="img-close">
-            </button> -->
           <div>
             好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。好髒，不敢碰她的東西了。
           </div>
@@ -427,9 +419,6 @@
           </div>
         </div>
         <div class="scroll text4 js-text4">
-          <!-- <button onclick="makeInfiniteClose4()" class="js-button4 position-absolute">
-              <img src="image/close.png" style="object-fit: contain; height: 40px; padding-left: 15px; display: flex; align-items: center;" class="img-close">
-            </button> -->
           <div>
             好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！好想換位置，我不想蟑螂爬過來！
           </div>
@@ -438,9 +427,6 @@
           </div>
         </div>
         <div class="scroll text5 js-text5">
-          <!-- <button onclick="makeInfiniteClose5()" class="js-button5 position-absolute">
-              <img src="image/close.png" style="object-fit: contain; height: 40px; padding-left: 20px; display: flex; align-items: center;" class="img-close">
-            </button> -->
           <div>
             亂講，蟑螂明明就只是路過，我都看到了。亂講，蟑螂明明就只是路過，我都看到了。
           </div>
@@ -655,7 +641,7 @@
       </div>
     </div>
     <iframe id="addFrame" src="add_cockroach_other.html"
-      style="width: 100%; height: 1300px; border: none; display: none;"></iframe>
+      style="width: 100%; height: 1300px; border: none; display: none; margin-top: 10vh;"></iframe>
     <div class="go-next-web" style="display: flex; justify-content: flex-end; margin-bottom: 5%;">
       <a href="chapter4-page.html"><button>進入章節四</button></a>
     </div>
@@ -670,17 +656,17 @@
         <div class="effect-conversation container position-relative" style="padding: 0;">
           <div class="left-bg position-absolute"></div>
           <div class="right-bg position-absolute" style="right: 0;"></div>
-          <div class="left-layout">
-            <img src="image/cockroach/gg/left-1.png" class="img-left-1 position-absolute">
-          </div>
           <div class="right-layout">
             <img src="image/cockroach/gg/right-1.png" class="img-right-1 position-absolute">
+          </div>
+          <div class="left-layout">
+            <img src="image/cockroach/gg/left-1.png" class="img-left-1 position-absolute" id="img-converation">
           </div>
           <div class="right-layout">
             <img src="image/cockroach/gg/frame2-right.jpg" class="position-absolute" id="img-converation">
           </div>
           <div class="left-layout">
-            <img src="image/cockroach/gg/frame2-left.jpg" class="position-absolute" id="img-converation">
+            <img src="image/cockroach/gg/frame2-left.png" class="position-absolute" id="img-converation">
           </div>
           <div class="right-layout">
             <img src="image/cockroach/gg/frame3-right.jpg" class="position-absolute" id="img-converation">

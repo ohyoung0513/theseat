@@ -146,6 +146,7 @@ ul li {
   position: fixed;
   top: 3vh;
   left: 1.5vw;
+  z-index: 1000;
 }
 
 .icon {
