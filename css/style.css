@@ -3,13 +3,13 @@ html {
 }
 
 .button-container {
-  height: 58px;
-  width: 117px;
-  border-radius: 29px;
+  height: 40px;
+  width: 75px;
+  border-radius: 20px;
   border: 0px;
   background-color: #585858;
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
   cursor: pointer;
 }
@@ -177,6 +177,11 @@ ul li {
   justify-content: center;
 }
 
+.choice-title h1{
+  font-size: 4rem;
+  font-weight: 600;
+}
+
 .choices {
   display: flex;
   justify-content: center;
@@ -243,7 +248,8 @@ ul li {
 .modalbutton {
   background: #000 !important;
   border: none !important;
-  height: 5vh;
+  border-radius: 20px !important;
+  height: 6vh;
   width: 8vw;
   font-size: 1.5rem;
   font-weight: bold;
