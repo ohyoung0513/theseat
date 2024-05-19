@@ -15,21 +15,25 @@
     .mobile-choice{
       position: relative;
       display: flex;
+      height: 100vh;
+      width: 100vw;
     }
     
     .mobile-choice .content{
-      height: 200px;
-      width: 1000px;
-      transform: scale(1)
+      position: relative;
+      height: 100%;
+      width: 100%;
+      /* transform: scale(1) */
     }
 
     .mobile-choice .content img{
       position: absolute;
       top: 0;
-      left: 0;
+      left: 35%;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      translate: -50% 0;
     }
 
     #text-image{

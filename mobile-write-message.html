@@ -112,6 +112,22 @@
       cursor: pointer;
     }
 
+    .mbutton-text {
+      appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            background-color: #007bff; /* 按鈕背景顏色 */
+            color: #fff; /* 文字顏色 */
+            padding: 10px 20px; /* 內邊距 */
+            font-size: 16px; /* 字體大小 */
+            cursor: pointer; /* 游標類型 */
+            outline: none; /* 去除點擊時的藍色輪廓 */
+            box-shadow: none; /* 去除陰影 */
+            border-radius: 5px; /* 圓角 */
+      color: white;
+    }
+
     .mbutton:hover {
       background-color: black;
       transition: 0.3s;
@@ -181,7 +197,7 @@
         </header>
         <div class="write-message-container d-flex justify-content-center align-items-center position-relative"
           style="height: 60vh;">
-          <div class="box-container" style="height: 80%; width: 45%; position: relative;">
+          <div class="box-container" style="height: 85%; width: 70%; position: relative;">
             <div class="gray-box"></div>
             <div class="white-box d-flex flex-column justify-content-center align-items-center">
               <form class="topic" style="width: 90%;" onsubmit="return addItem(this);">
@@ -201,7 +217,7 @@
                 <div class="message-content-container">
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">留言</label>
-                    <textarea class="form-control" id="FormControlTextarea" rows="7" style="font-size: 1.8rem;"></textarea>
+                    <textarea class="form-control" id="FormControlTextarea" rows="4" style="font-size: 1.8rem;"></textarea>
                   </div>
                 </div>
                 <div class="mbutton-container d-flex justify-content-end align-items-center">

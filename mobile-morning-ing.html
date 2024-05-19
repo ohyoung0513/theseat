@@ -107,36 +107,7 @@
     </div>
 
     <div class="visual-effect">
-      <div class="content">
-        <div class="character-status">
-          <!-- 現在用bg image做湘雲的反應，下面的是直接圖片 -->
-          <div class="container d-flex justify-content-center align-items-center position-relative"
-            style="height: 100vh;">
-            <div class="col-2 position-absolute d-flex justify-content-center align-items-center position-relative"
-              style="height: 100%;">
-              <img src="image/morning-ing/character-status-1.png" class="w-100 character-status1 position-absolute">
-              <img src="image/morning-ing/character-status-2.png" class="w-100 character-status2 position-absolute">
-              <img src="image/morning-ing/character-status-3.png" class="w-100 character-status3 position-absolute">
-            </div>
-            <div class="people-look">
-              <div class="flexbox-look look-horizontal-group-01">
-                <img src="image/morning-ing/look-01.png" class="pic-look" style="position:absolute; margin-right: 70%;">
-                <img src="image/morning-ing/look-02.png" class="pic-look"
-                  style="position:absolute; margin-top: 5%; margin-left: 70%;">
-              </div>
-              <div class="flexbox-look look-horizontal-group-02">
-                <img src="image/morning-ing/look-03.png" class="pic-look" style="position:absolute; margin-right: 70%;">
-                <img src="image/morning-ing/look-04.png" class="pic-look" style="position:absolute; margin-left: 70%;">
-              </div>
-              <div class="flexbox-look look-horizontal-group-03">
-                <img src="image/morning-ing/look-05.png" class="pic-look"
-                  style="position:absolute; margin-top: -5%; margin-right: 70%;">
-                <img src="image/morning-ing/look-07.png" class="pic-look" style="position:absolute; margin-left: 70%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <img src="image/morning-ing/m-morning-effect.png" >
     </div>
 
     <div class="container back-story">
@@ -251,7 +222,7 @@
     document.getElementById('audioToggle').addEventListener('click', toggleAudio);
     gsap.registerPlugin(ScrollTrigger);
 
-    function lookHorizontalGroupAnima() {
+    /*function lookHorizontalGroupAnima() {
       console.log("pc animation");
       //stagger好像在純動畫裡面用比較好，在這邊功能會跟scrub相衝突
       const allPicLook = document.getElementsByClassName('pic-look');
@@ -356,7 +327,7 @@
     };
 
     window.addEventListener('resize', handleAnimation);
-    window.addEventListener('load', animationController);
+    window.addEventListener('load', animationController);*/
 
   </script>
 

@@ -76,16 +76,27 @@
 
   /*tip*/
   #tip {
-            display: none; /* 初始隱藏 */
             position: fixed;
             bottom: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px 20px;
+            right: 40%;
+            background-color: #C3DD45;
+            border: solid 2px #000000;
+            color: #000000;
+            font-size: 2rem;
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            padding: 15px 30px;
             border-radius: 5px;
+            z-index: 2000;
+            opacity: 0; /* 初始不透明度 */
+            transition: opacity 1s ease; /* 淡入淡出效果 */
+            visibility: hidden; /* 初始不可見 */
         }
-
+        #tip.show {
+            opacity: 1; /* 顯示時的不透明度 */
+            visibility: visible; /* 顯示時可見 */
+        }
   /*選擇區CSS*/
 
   /*A-BL*/
@@ -606,25 +617,32 @@
     }
 
     // 設定滾動提示的顯示位置
-    const targetScrollPosition = 500; // 設定滾動觸發的位置（像素）
+    const targetScrollPosition = 7500; // 設定滾動觸發的位置（像素）
         const tip = document.getElementById('tip');
-        let tipTimeout; // 用於存儲定時器ID
+        let tipShown = false; // 標誌變量，初始為false
 
         window.addEventListener('scroll', function() {
-            if (window.scrollY >= targetScrollPosition) {
-                tip.style.display = 'block'; // 顯示提示
-
-                // 清除之前的定時器（如果有）
-                if (tipTimeout) {
-                    clearTimeout(tipTimeout);
-                }
+            if (window.scrollY >= targetScrollPosition && !tipShown) {
+                tip.classList.add('show'); // 顯示提示
+                tipShown = true; // 設置標誌變量為true
 
                 // 設置3秒後隱藏提示
-                tipTimeout = setTimeout(function() {
-                    tip.style.display = 'none';
+                setTimeout(function() {
+                    tip.classList.remove('show');
+
+                    // 等待過渡效果完成後隱藏元素
+                    setTimeout(function() {
+                        tip.style.visibility = 'hidden';
+                    }, 1000); // 與過渡時間相同
                 }, 3000);
             }
         });
+
+        // 顯示提示並設置可見性
+        function showTip() {
+            tip.style.visibility = 'visible';
+            tip.classList.add('show');
+        }
 
 
   </script>
