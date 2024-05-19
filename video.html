@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>前導影片</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,15 +21,27 @@
 
   .content{
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: row;
-    
+    justify-content: center;
+    align-items: center;
   }
 
   .video{
-    width: 80vw;
+    height: 90%;
+    width: auto;
     display: flex;
     align-items: center;
+  }
+
+  .go-next-web{
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 0 2%;
+    font-size: 2rem;
   }
 
   .comic-bg{
@@ -51,12 +64,16 @@
   <div class="content">
     <div class="video">
       <!-- chrome瀏覽器在大多數情況下不允許自動播放。但是，始終允許靜音自動播放(+muted)。 -->
-      <video controls autoplay plays-inline width="100%">
+      <video controls autoplay plays-inline height="100%" style="height: 100%;">
         <source src="https://d13ms3ozmcl7uf.cloudfront.net/trailer.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="go-next-web" style="display: flex; justify-content: flex-end; margin: 2%; margin-left: 10%; font-size: 2rem;">
-      <a href="chapter1-page.html"><button>skip</button></a>
+      <div class="go-next-web">
+        <a href="chapter1-page.html">
+          <div class="button-container d-flex justify-content-center align-items-center">
+            skip
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </body>
