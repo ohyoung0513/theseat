@@ -74,6 +74,18 @@
     z-index: -100;
   }
 
+  /*tip*/
+  #tip {
+            display: none; /* 初始隱藏 */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
   /*選擇區CSS*/
 
   /*A-BL*/
@@ -592,6 +604,27 @@
 
       tl.to("#messyPath", { strokeDashoffset: 0, duration: 10 });
     }
+
+    // 設定滾動提示的顯示位置
+    const targetScrollPosition = 500; // 設定滾動觸發的位置（像素）
+        const tip = document.getElementById('tip');
+        let tipTimeout; // 用於存儲定時器ID
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY >= targetScrollPosition) {
+                tip.style.display = 'block'; // 顯示提示
+
+                // 清除之前的定時器（如果有）
+                if (tipTimeout) {
+                    clearTimeout(tipTimeout);
+                }
+
+                // 設置3秒後隱藏提示
+                tipTimeout = setTimeout(function() {
+                    tip.style.display = 'none';
+                }, 3000);
+            }
+        });
 
 
   </script>
